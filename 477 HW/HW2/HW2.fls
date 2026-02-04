@@ -1,8 +1,8 @@
-PWD /Users/aadhithyasaravanan/Desktop/LaTeX/477 HW/HW2
+PWD /Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/477 HW/HW2
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/aadhithyasaravanan/Desktop/LaTeX/477 HW/HW2/HW2.tex
+INPUT /Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/477 HW/HW2/HW2.tex
 OUTPUT HW2.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
