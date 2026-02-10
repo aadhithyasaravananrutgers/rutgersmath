@@ -1,0 +1,83 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 2}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 2}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 1.4.4}
+\newline
+\newline
+We will show that \(\sup{T} = b\) by contradiction. By assuming \(\sup{T} \ne b\), we know that either \(\sup{T} < b\) or \(\sup{T} > b\). In the first case, we can assume \(\sup{T} < b\). Let \(c = \sup{T}\). Then, by the Density of the Rationals, there must exist a $q$ in the rationals such that $c < q < b$. Then, $q$ is in $T$ because it is in \(\mathbb{Q}\) and $q < b$. Since $c < b$, $c$ cannot be the least upper bound of $T$, as there is an element in $T$, $q$, that is greater than it. In the second case, we can assume \(\sup{T} > b\). Again, let \(c = \sup{T}\). Then, by the Density of the Rationals, there must exist a $q$ in the rationals such that $b < q < c$. Now, we know that $q$ is an upper bound for $T$ that is less than $c$. Therefore, $c$ is not the least upper bound for $T$. Now, since we arrived at contradictions for both \(\sup{T} < b\) and \(\sup{T} > b\), it must be true that \(\sup{T} = b\).
+\newline
+
+\underline{Exercise 1.4.5}
+\newline
+\newline
+By Density of the Rationals, there must exist a $q$ such that $a-\sqrt{2} < q < b-\sqrt{2}$. Adding $\sqrt{2}$ to the whole inequality, we have \(a < q + \sqrt{2} < b$. $q + \sqrt{2} \in \mathbb{I}\) because \(a + t \in \mathbb{I}\) if \(a \in \mathbb{Q}\) and \(t \in \mathbb{I}\), which is satisfied by $q$ and $\sqrt{2}$. So, \(q + \sqrt{2}\) satisfies a \(t \in \mathbb{I}\) for \(a < t < b\).
+\newline
+
+\underline{Exercise 1.4.8}
+\newline
+\begin{parts}
+    \part Let \(A=\{1-\frac{1}{2^n}|n\in\mathbb{N}\}\) and \(B=\{1-\frac{1}{3^n}|n\in\mathbb{N}\}\). \(A\cap B=\emptyset\), as all rationals in each set are in lowest form and $A$ has only powers of 2 in the denominator, while $B$ has only powers of 3 in the denominator. \(\sup{A}=\sup{B}=1\) and \(1\notin{A\cup B}\), so $A$ and $B$ satisfy the conditions.
+    \part Let \(J_1=(-1, 1), J_2=(-\frac{1}{2}, \frac{1}{2}), \dots, J_n=(-\frac{1}{n}, \frac{1}{n})\). Then, \(\bigcap^\infty_{n=1}J_n=\{0\}\), as for any real number \(y>0\), \(\exists n\in\mathbb{N}\) satisfying \(\frac{1}{n}<y\), by the Archimedean Property, and $J_n$ does not contain $y$. Since the intersection contains a finite amount of elements, the sets $J_n$ satisfies the given conditions.
+    \part Let \(L_1=[1, \infty), L_2=[2, \infty), \dots, L_n=[n, \infty)\). Then, \(\bigcap^\infty_{n=1}L_n=\emptyset\), as for any number \(x \in\mathbb{R}\), \(\exists n\in\mathbb{N}\) satisfying \(n>x\), by the Archimedean Property, and $L_n$ does not contain $x$. Since the intersection is empty, the sets $L_n$ satisfies the given conditions.
+    \part This condition is not possible, which can be proven by contradiction. Let \(I_n=[a_n,b_n]\), with $a_n\le b_n$, assuming all the finite intersections are nonempty and the infinite intersection is empty. Because the finite intersections are nonempty, we can define \(A_N=\bigcap^N_{n=1}I_n\), which is closed and bounded because each $I_n$ is closed and bounded. We know that $A_N$ is nonempty because it is a finite intersection. Each \(A_{N+1}=A_N\cap I_{n+1}\subseteq A_N\), so $(A_N)_{N\ge1}$ is a nested sequence of nonempty closed bounded intervals. By applying the Nested Interval Property, we know that \(\bigcap^\infty_{N=1}A_N\ne\emptyset\). But, \(\bigcap^\infty_{N=1}A_N=\bigcap^\infty_{n=1}I_n\), so \(\bigcap^\infty_{n=1}I_n\ne\emptyset\). This contradicts the assumption that the infinite intersection is empty, so a sequence of closed bounded intervals cannot satisfy the given conditions.
+    \newline
+\end{parts}
+
+
+\underline{Exercise 1.5.9}
+\newline
+\begin{parts}
+    \part \(x^2-2=0\) is a polynomial which has two real roots, one of which is $\sqrt{2}$, showing that $\sqrt{2}$ is algebraic.\newline\newline \(x^3-2=0\) is a polynomial which has one real root, which is $\sqrt[3]{2}$, showing that $\sqrt[3]{2}$ is algebraic.\newline\newline We want $x=\sqrt{2}+\sqrt{3}$. Squaring both sides, we get $x^2=5+2\sqrt{6}$. Subtracting 5 from both sides and squaring both sides again results in $x^4-10x^2+25=24$. Rearranging, we have the polynomial $x^4-10x^2+1=0$ that has a real root of $\sqrt{2}+\sqrt{3}$, showing that it is algebraic.
+    \part By fixing $n\in\mathbb{N}$, we let $A_n$ denote the set of algebraic numbers obtained as roots of polynomials with integer coefficients of degree $n$. First, this means that the number of polynomials of integer coefficients of degree $n$, $P_n$, must be countable. Each coefficient $a_i$ must be in $\mathbb{Z}$, and the coefficient of the $x^n$ must be in $\mathbb{Z}\setminus\{0\}$. The cardinality of the Cartesian product of these sets represents the cardinality of $P_n$. Since $|\mathbb{Z}|=|\mathbb{Z}\setminus\{0\}|=|\mathbb{N}|$, $|P_n|$ is equal to the cardinality of the Cartesian product of $n$ sets of $\mathbb{N}$. The finite product of countably infinite sets is also countable, which can be shown by induction. For the base case, we know $\mathbb{N}$ is countable. Using the diagonal method from in class, we know that the product of two countable sets, such as $\mathbb{N}\times\mathbb{N}$, is countable. Assuming \(\prod_{i=1}^{m}\mathbb{N}\) is countable, we need to prove \(\prod_{i=1}^{m+1}\mathbb{N}\) is countable. \(\prod_{i=1}^{m+1}\mathbb{N}=(\prod_{i=1}^{m}\mathbb{N})\times\mathbb{N}\), which is the product of two countable sets. So, \(\prod_{i=1}^{m+1}\mathbb{N}\) is countable. Thus, any finite product of countable sets is countable, and the cardinality of the Cartesian product of $n$ sets of $\mathbb{N}$ is countable. For each $p\in P_n$, the number of roots of $p$ is at most $n$. Let $R(p)$ be the set of roots of $p$, and $|R(p)|$ is always finite. So, \(A_n=\bigcup_{p\in P_n}R(p)\) and since the countable union of finite sets is countable, $A_n$ is countable.
+    \part Since we proved that for a fixed \(n\in\mathbb{N}\), $A_n$ is countable, we can also prove that the set of all algebraic numbers, $A$, is countable. Since a countable union of countable sets is countable, $A$ is countable, as $A=\bigcup^\infty_{n=1}A_n$. Using this, we can conclude that the transcendentals are uncountable with a proof by contradiction. The transcendentals are equal to $\mathbb{R}\setminus A$. If $\mathbb{R}\setminus A$ were countable, then $\mathbb{R}=A\cup(\mathbb{R}\setminus A)$ would be countable. Since $\mathbb{R}$ is uncountable, $\mathbb{R}\setminus A$ must be uncountable. Therefore, there are uncountably many transcendentals.
+    \newline
+\end{parts}
+
+\underline{Exercise 1.5.11}
+\newline
+\begin{parts}
+    \part We can define $h:X\to Y$ with
+    \[h(x)=\begin{cases} 
+        f(x), & x\in A \\
+        g^{-1}(x), & x\in A'
+        \end{cases}
+    \]
+    If \(f\) can be shown to be bijective from \(A\) to \(B\), and \(g^{-1}\) can be shown to exist by \(g\) being bijective from \(B'\) to \(A'\), then their definitions will agree on disjoint subsets of X. Then, \(h\) will be a bijection, so \(X\sim Y\).
+    \part In the case that $A_1=\emptyset$, then $g$ is surjective, as for every element $x\in X$, $\exists y\in Y$ such that $g(y)=x$. Then, $g$ is bijective, so $X\sim Y$ immediately. Assuming $A\ne \emptyset$, we need to prove that $A_i$  and $A_j$ are disjoint for all $i,j\in\mathbb{N}$. Suppose $x$ is an element of $A_i\cap A_j$, with $i<j$. Then, as $x\in A_i$, there must exist an element $y\in A_1$ such that $i-1$ applications of $g$ and $f$ maps it to $x$. Since $x\in A_j$, there must also exist an element $z\in A_1$ such that $j-1$ applications of $g$ and $f$ maps it to $x$. So, we have $(g\circ f)^{i-1}(y)=x$ and $(g\circ f)^{j-1}(z)=x$. Then, $(g\circ f)^{i-1}(y)=(g\circ f)^{j-1}(z)$. By the injectivity of $g$ and $f$ and the fact that $i<j$, we can cancel the outermost compositions of $(g \circ f)$ $i-1$ times. Then, we have $y=(g\circ f)^{j-i}(z)$. Since $j>i$, $g$ is applied at least once to $z$, so $(g\circ f)^{j-i}(z)\in g(Y)$. However, by definition, $y\in A_1$, and $A_1\cap g(Y)=\emptyset$. So, by contradiction, $A_i\cap A_j=\emptyset$ and $A_i$  and $A_j$ are disjoint for all $i,j\in\mathbb{N}$. Since the subsets of $X$ are pairwise disjoint and $f$ is injective, each subset $f(A_n)$ for $n\in \mathbb{N}$ of $Y$ is also pairwise disjoint.
+    \part To show that $f$ maps $A$ onto $B$, we need to show that $f(A)\subset B$ and $B\subset f(A)$. Take any $x\in A$. By definition of $A$, $x\in A_n$ for some $n$. By applying $f$, we have $f(x)\in f(A_n)\subset B$, so $f(A)\subset B$. Now, take any $y\in B$. By definition of $B$, $y\in f(A_n)$ for some $n$. Then, there must exist an $x\in A_n$ such that $y=f(x)$. Since $A_n\subset A$, $x\in A$. Therefore, $y\in f(A)$ and $B\subset f(A)$. So, $f$ maps $A$ onto $B$, and since $f$ is injective, $f$ has been proven to be bijective.
+    \part To show that $g$ maps $B'$ onto $A'$, we need to show that $g(B')\subset A'$ and $A'\subset g(B')$. Take any $y\in B'$. If $g(y)\in A$, then $g(y)\in A_{n+1}=g(f(A_n))$ for some $n$. By injectivity of $g$, we have $y\in f(A_n)\subset B$. This is a contradiction, as $y\in Y\setminus B$. So, $g(y)\notin A$, and $g(y)\in A'$. Therefore, $g(B') \subset A'$. Now, take any $x\in A'$. Then, $x\notin A_n$ for any $n\in\mathbb{N}$. So, $x\notin A_1$, and $x\in g(Y)$. Let $y\in g(Y)$ such that $g(y)=x$. If $y\in B$, then $x\in A$, which is a contradiction, as $x\in A'$. So, $y\in B'$, and since $x=g(y)$, $A'\subset g(B')$. So, $g$ maps $B'$ onto $A'$, and since $g$ is injective, $g$ has been proven to be bijective.
+    \newline
+\end{parts}
+
+\underline{Exercise 1.6.1}
+\newline
+\newline
+We must prove that $\mathbb{R}$ being uncountable $\implies (0, 1)$ being uncountable, and $(0, 1)$ being uncountable$\implies \mathbb{R}$ being uncountable. Assuming $\mathbb{R}$ is uncountable, we need to create a bijection $f: \mathbb{R} \to (0,1)$. Let $f(x)=\frac{1}{1+e^{-x}}$. This function has an inverse, $f^{-1}: (0,1) \to \mathbb{R}$, which is defined as $f^{-1}(x)=-\ln(\frac{1}{x}-1)$. Since $f$ has an inverse function, $f$ is bijective, meaning $\mathbb{R}$ and $(0,1)$ have the same cardinality. Since we are assuming $\mathbb{R}$ is uncountable, $(0,1)$ is also uncountable. To prove that $(0, 1)$ being uncountable$\implies \mathbb{R}$ being uncountable, we can assume $(0,1)$ is uncountable and use $f^{-1}: (0,1) \to \mathbb{R}$ as our function. Since it has an inverse, specifically $f$, $f^{-1}$ is a bijection, so $(0,1)$ and $\mathbb{R}$  have the same cardinality. Since we are assuming $(0,1)$ is uncountable, $\mathbb{R}$ is also uncountable. Therefore, $(0,1)$ is uncountable if and only if $\mathbb{R}$ is uncountable.
+\newline
+
+\underline{Exercise 1.6.9}
+\newline
+\newline
+The power set of $\mathbb{N}$ is the collection of subsets of the natural numbers. Let each subset $A$ be represented by a sequence of binary numbers, $(a_1,a_2,a_3,\dots)$, where $a_n=1$ if $n\in A$ and $a_n=0$ if $n\notin A$. This correspondence between the subsets of the naturals and a binary sequence is bijective, so $|P(\mathbb{N})|=|\{0,1\}^\mathbb{N}|$. Every binary sequence can be mapped to a real number in $[0,1]$. Let $x$ be defined as $\sum_{n=1}^{\infty}\frac{a_n}{2^n}$. However, some real numbers have multiple expansions in this form, such as $\frac{1}{2}$, which can be represented as $(1,0,0,\dots)$, but also as $(0,1,1,\dots)$. However, this is true for only a countable amount of real numbers, so cardinality is not affected. Therefore, $|\{0,1\}^\mathbb{N}|=|[0,1]|$. Since the cardinality of $[0,1]$ is equal to the cardinality of $\mathbb{R}$, we have $|P(\mathbb{N})|=|\{0,1\}^\mathbb{N}|=|[0,1]|=|\mathbb{R}|$. So, $P(\mathbb{N})\sim \mathbb{R}$.
+\newline
+
+\underline{Exercise 1.6.10}
+\newline
+\begin{parts}
+    \part The set of all functions from $\{0,1\}$ to $\mathbb{N}$ can be represented as a set of ordered pairs. Each function $f:\{0,1\}\to \mathbb{N}$ can be written as an ordered pair $(f(0),f(1))$. The values of $f(0)$ and $f(1)$ vary across the natural numbers, so the set of all of these ordered pairs is equivalent to $\mathbb{N}\times\mathbb{N}$. Since there is a 1-1 correspondence from $\mathbb{N}\times\mathbb{N}$ to $\mathbb{N}$, the set of all functions from $\{0,1\}$ to $\mathbb{N}$ is countable.
+    \part We can show that the set of all functions from $\mathbb{N}$ to $\{0,1\}$ is uncountable using Cantor's diagonal argument. Assume that the set is countable; then it should be able to be enumerated in correspondence with the natural numbers. Let $f_n:\mathbb{N}\to\{0,1\}$ be the function that corresponds to $n$, and $n$ varies across the natural numbers. We can create a function $g:\mathbb{N}\to\{0,1\}$ such that $g(n)=1$ if $f_n(n)=0$ and $g(n)=0$ if $f_n(n)=1$. $g$ differs from every $f_n$ at least at the $n$-th element, so $g$ is not in the list of functions. This contradicts the assumption that the set of all functions from $\mathbb{N}$ to $\{0,1\}$ is countable, so it must be uncountable.
+\end{parts}
+
+\end{document}
