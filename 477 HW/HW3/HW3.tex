@@ -1,0 +1,68 @@
+\documentclass{exam}
+\usepackage{amsmath}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 3}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 3}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\begin{parts}
+    \part Let $E$ be the event that no one gets their own hat. Then, $E=\bigcap_{i=1}^n E_i^c=(\bigcup_{i=1}^n E_i)^c$.
+    \part $P(E)=1-P(\bigcup_{i=1}^n E_i)=1-\sum_{i=1}^n P(E_i)+\sum_{i<j}P(E_i\cap E_j)-\cdots+(-1)^n P(\bigcap_{i=1}^n E_i)$
+    \part $P(E)=1-\sum_{i=1}^n P(E_i)+\sum_{i<j}P(E_i\cap E_j)-\cdots+(-1)^n P(\bigcap_{i=1}^n E_i)=1-n\cdot \frac{1}{n}+\binom{n}{2}\cdot \frac{(n-2)!}{n!}-\dots=1-\sum_{k=1}^n (-1)^{k+1}\cdot \binom{n}{k}\cdot \frac{(n-k)!}{n!}=1-\sum_{k=1}^n(-1)^{k+1}\cdot \frac{n!}{k!(n-k)!}\cdot\frac{(n-k)!}{n!}=1-\sum_{k=1}^n \frac{(-1)^{k+1}}{k!}=\sum_{k=0}^n \frac{(-1)^k}{k!}$
+    \newline
+\end{parts}
+
+\underline{Problem 2}
+\newline
+\begin{parts}
+    \part The probability of selecting a complete team is equivalent to the probability of selecting one guard, one forward, and one center. The sample space consists of all possible combinations of players from each team, which is $3^3$. First, we choose one guard out of three teams, then a forward out of the other two teams, then a center from the last team. So the number of ways to pick a complete team is $\binom{3}{1}\cdot\binom{2}{1}\cdot\binom{1}{1}=6$. Therefore, the probability is $\frac{6}{3^3}=\frac{2}{9}$.
+    \part There are only three ways to get 3 players that play the same position, so the probability is $\frac{3}{3^3}=\frac{1}{9}$.
+    \newline
+\end{parts}
+
+\underline{Problem 3}
+\newline
+\newline
+From the $i$-th position, the sample space consists of all the individuals, which is ${1,2,3,\dots,b+g}$. The event has $g$ outcomes, so the probability of selecting a girl is $\frac{g}{b+g}$.
+\newline
+
+\underline{Problem 4}
+\newline
+\begin{parts}
+    \part The sample space consists of all ways to select 7 balls from $12+16+18=46$ balls, which is $\binom{46}{7}$. The event consists of all ways to select 3 red balls, 2 blue balls, and 2 green balls, which is $\binom{12}{3}\cdot\binom{16}{2}\cdot\binom{18}{2}$. Therefore, the probability is $\frac{\binom{12}{3}\cdot\binom{16}{2}\cdot\binom{18}{2}}{\binom{46}{7}}$.
+    \part If $E$ is the event of selecting at least 2 red balls, then $P(E)=1-P(E_0\cup E_1)$ where $E_n$ is the event of selecting exactly $n$ red balls. Picking 0 red balls means picking all 7 balls from the 34 non-red balls, so $P(E_0)=\frac{\binom{34}{7}}{\binom{46}{7}}$. Picking 1 red ball means picking 1 red ball and 6 non-red balls, so $P(E_1)=\frac{\binom{12}{1}\cdot\binom{34}{6}}{\binom{46}{7}}$. Therefore, $P(E)=1-\frac{\binom{34}{7}+\binom{12}{1}\cdot\binom{34}{6}}{\binom{46}{7}}$.
+    \part To get the probability of selecting 7 balls of the same color, we can add up the probabilities of selecting 7 red balls, 7 blue balls, and 7 green balls. The number of ways to select 7 red balls is $\binom{12}{7}$, the number of ways to select 7 blue balls is $\binom{16}{7}$, and the number of ways to select 7 green balls is $\binom{18}{7}$. Therefore, the total probability is $\frac{\binom{12}{7}+\binom{16}{7}+\binom{18}{7}}{\binom{46}{7}}$.
+    \part To get the probability of selecting exactly 3 red balls or exactly 3 blue balls, we can add up the probabilities of selecting exactly 3 red balls and exactly 3 blue balls and subtracting the probability of selecting exactly 3 red balls and 3 blue balls. The number of ways to select exactly 3 red balls is $\binom{12}{3}\cdot\binom{34}{4}$ and the number of ways to select exactly 3 blue balls is $\binom{16}{3}\cdot\binom{30}{4}$. The number of ways to select exactly 3 red balls and 3 blue balls is $\binom{12}{3}\cdot\binom{16}{3}\cdot\binom{18}{1}$. Therefore, the total probability is $\frac{\binom{12}{3}\cdot\binom{34}{4}+\binom{16}{3}\cdot\binom{30}{4}-\binom{12}{3}\cdot\binom{16}{3}\cdot\binom{18}{1}}{\binom{46}{7}}$.
+    \newline
+\end{parts}
+
+\underline{Problem 5}
+\newline
+\begin{parts}
+    \part The sample space, $|S|$, consists of $n$ tosses of 2 dice at a time, so $|S|=6^{2n}$. The event consists of any  outcome where $(6,6)$ comes up in a single throw. Since there is only one way to get a double 6 in a single throw, the size of the event is $|S|-35^n$. The probability is then $\frac{|S|-35^n}{|S|}=1-\frac{35^n}{6^{2n}}=1-\left(\frac{35}{36}\right)^n$.
+    \part To make the probability of getting at least one double 6 at least $\frac{1}{2}$, we can set up the following inequality: $1-\left(\frac{35}{36}\right)^n\ge\frac{1}{2}$. Solving for $n$, we get $\left(\frac{35}{36}\right)^n\le\frac{1}{2}$. Taking the natural logarithm of both sides, we get $n\ln\left(\frac{35}{36}\right)\le\ln\left(\frac{1}{2}\right)$. Since $\ln\left(\frac{35}{36}\right)$ is negative, we can divide both sides by it and reverse the inequality to get $n\ge\frac{\ln\left(\frac{1}{2}\right)}{\ln\left(\frac{35}{36}\right)}$. Therefore, the minimum number of tosses needed is $\lceil \frac{\ln\left(\frac{1}{2}\right)}{\ln\left(\frac{35}{36}\right)} \rceil$.
+\end{parts}
+
+\underline{Problem 6}
+\newline
+\begin{parts}
+    \part The total sample space is the arrangement of $N$ people in a line, which has size $N!$. The event consists of the arrangements where A and B are next to each other. We can treat A and B as a single unit, so we have $N-1$ units to arrange, which has size $(N-1)!$. However, A and B can be arranged in 2 ways within their unit, so the total size of the event is $2(N-1)!$. Therefore, the probability is $\frac{2(N-1)!}{N!}=\frac{2}{N}$.
+    \part In a circle, two arrangements are the same if a rotation can transform one arrangement into the other. Therefore, the total sample space is the arrangement of $N$ people in a circle, which has size $(N-1)!$. The event consists of the arrangements where A and B are next to each other. We can treat A and B as a single unit, so we have $N-1$ units to arrange in a circle, which has size $(N-2)!$. However, A and B can be arranged in 2 ways within their unit, so the total size of the event is $2(N-2)!$. Therefore, the probability is $\frac{2(N-2)!}{(N-1)!}=\frac{2}{N-1}$. This probability only applies for $N\ge 3$ since we cannot have A and B next to each other if there are only 2 people in the circle.
+    \newline
+\end{parts}
+
+\underline{Problem 7}
+\newline
+\newline
+The probability of no one being next to their partner is equivalent to the probability of the complement of anyone being next to their partner, which is the probability of at least one couple being next to each other. We can use the principle of inclusion-exclusion to calculate this probability. Let $E_i$ be the event that the $i$-th couple is next to each other. Then, we want to calculate $P(\bigcup_{i=1}^4 E_i)$. Using inclusion-exclusion, we have: $P(\bigcup_{i=1}^4 E_i)=\sum_{i=1}^4 P(E_i)-\sum_{i<j}P(E_i\cap E_j)+\sum_{i<j<k}P(E_i\cap E_j\cap E_k)-P(E_1\cap E_2\cap E_3\cap E_4)$. The size of $|E_i|$ is $2\cdot 7!$ since we can treat the couple as a single unit and arrange the remaining 7 units in a line, and the couple can be arranged in 2 ways. The size of $|E_i\cap E_j|$ is $2^2\cdot 6!$ since we can treat the two couples as single units and arrange the remaining 6 units in a line, and each couple can be arranged in 2 ways. The size of $|E_i\cap E_j\cap E_k|$ is $2^3\cdot 5!$ since we can treat the three couples as single units and arrange the remaining 5 units in a line, and each couple can be arranged in 2 ways. The size of $|E_1\cap E_2\cap E_3\cap E_4|$ is $2^4\cdot 4!$ since we can treat all four couples as single units and arrange the remaining 4 units in a line, and each couple can be arranged in 2 ways. To get the probability, we need to find how many times each arrangement should be counted in the formula, as we need to account for which couples we choose to be seated next to each other in each case. For the first sum, we have $\binom{4}{1}$ ways to choose which couple is next to each other. For the second sum, we have $\binom{4}{2}$ ways to choose which two couples are next to each other. For the third sum, we have $\binom{4}{3}$ ways to choose which three couples are next to each other. For the last term, we have $\binom{4}{4}$ ways to choose which four couples are next to each other. So, the probability of having at least one person sit next to their partner is $\frac{\binom{4}{1}\cdot 2\cdot 7!-\binom{4}{2}\cdot 2^2\cdot 6!+\binom{4}{3}\cdot 2^3\cdot 5!-\binom{4}{4}\cdot 2^4\cdot 4!}{8!}$. Therefore, the probability of no one sitting next to their partner is $1-\frac{\binom{4}{1}\cdot 2\cdot 7!-\binom{4}{2}\cdot 2^2\cdot 6!+\binom{4}{3}\cdot 2^3\cdot 5!-\binom{4}{4}\cdot 2^4\cdot 4!}{8!}$.
+\end{document}
