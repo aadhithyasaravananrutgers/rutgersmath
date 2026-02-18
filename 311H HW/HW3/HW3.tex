@@ -1,0 +1,96 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 3}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 3}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 2.2.7}
+\newline
+\begin{parts}
+    \part The sequence $(-1)^n$ is not eventually in ${1}$. For any $k \in \mathbb{N}$, if $(-1)^k$ is in ${1}$, then $(-1)^{k+1}$ is not in ${1}$. So, there exists no such $N$ such that for all $n \geq N$, $(-1)^n$ is in ${1}$. The sequence $(-1)^n$ is frequently in ${1}$. Choose any $N \in \mathbb{N}$. Then, if $(-1)^n$ is in ${1}$, let $n=N$, and if not, let $n=N+1$. Then, this choice of $n$ is greater than or equal to $N$, and $(-1)^n$ is in ${1}$. So, there exists such an $n\ge N$ such that $(-1)^n$ is in ${1}$, and thus, $(-1)^n$ is frequently in ${1}$.
+    \part Eventually is a stronger definition than frequently. Eventually implies frequently, but frequently does not imply eventually. Let $(a_n)$ be a sequence that is eventually in $A$. Then, there exists some $N_1 \in \mathbb{N}$ such that for all $n \geq N$, $a_n\in A$. To prove that $(a_n)$ is frequently in $A$, choose any $N_2 \in \mathbb{N}$. If $N_1 \geq N_2$, then let $n=N_1$. If $N_1 < N_2$, then let $n=N_2$. In either case, there exists some $n \geq N_2$ such that $a_n$ is in $A$, and thus, $(a_n)$ is frequently in $A$. Let $(a_n)$ be a sequence that is frequently in $A$ but not eventually in $A$. Then, for all $N_1 \in \mathbb{N}$, there exists some $n \geq N_1$ such that $a_n$ is in $A$, but there does not exist some $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$, $a_n$ is in $A$. So, $(a_n)$ is frequently in $A$ but not eventually in $A$. So, eventually is a stronger definition than frequently.
+    \part Let $A=(a-\epsilon, a+\epsilon)$ for some $\epsilon > 0$, the set of points with distance less than $\epsilon$ from $a$. A sequence $(a_n)$ converges to $a$ if $(a_n)$ is eventually in $A$.
+    \part $(x_n)$ is not necessarily eventually in the interval $(1.9, 2.1)$, as terms could alternate in and out of the interval indefinitely. So, there would be no $N\in \mathbb{N}$ such $x_n\in (1.9, 2.1)$ for all $n\ge N$. $(x_n)$ is frequently in the interval $(1.9, 2.1)$. If it were not, there would exist some $N\in \mathbb{N}$ such that for all $n\ge N$, $x_n\notin (1.9, 2.1)$. This would imply that there are at most $N-1$ terms of the sequence in the interval $(1.9, 2.1)$, which contradicts that an infinite number of terms euqal 2. So, $(x_n)$ is frequently in the interval $(1.9, 2.1)$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.3.2}
+\newline
+\begin{parts}
+    \part For all $\epsilon_1 > 0$, there exists some $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$, $|x_n - 2| < \epsilon_1$. Let $y_n=\frac{2x_n-1}{3}$. We want $|y_n-1|<\epsilon_2$ for all $n \geq N_2$ for some $\epsilon_2 > 0$ and $N_2 \in \mathbb{N}$. We can write $|y_n-1|$ as $|\frac{2x_n-1}{3}-1|=|\frac{2x_n-4}{3}|=\frac{2}{3}|x_n-2|$. Then, choose $\epsilon_2=\frac{2}{3}\epsilon_1$. Then, for all $n \geq N_1$, $|y_n-1|=\frac{2}{3}|x_n-2|<\frac{2}{3}\epsilon_1=\epsilon_2$. So, there exists some $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$, $|y_n-1|<\epsilon_2$, and thus, $\frac{2x_n-1}{3}\to 1$.
+    \part For all $\epsilon_1 > 0$, there exists some $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$, $|x_n - 2| < \epsilon_1$. Let $y_n=\frac{1}{x_n}$. We want $|y_n-\frac{1}{2}|<\epsilon_2$ for all $n \geq N_2$ for some $\epsilon_2 > 0$ and $N_2 \in \mathbb{N}$. From the definition of $x_n\to 2$, we can choose $\epsilon_1=1$. Then, there exists some $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$, $|x_n - 2| < 1$. This implies that for all $n \geq N_1$, $1 < x_n < 3$. Then, we know that $x_n>1$ and $\frac{1}{x_n}<1$ for all $n \geq N_1$. Then, $|y_n-\frac{1}{2}|=|\frac{1}{x_n}-\frac{1}{2}|=|\frac{2-x_n}{2x_n}|<\frac{|x_n-2|}{2}<\frac{\epsilon_1}{2}$. Choose $\epsilon_2=\frac{1}{2}\epsilon_1$. Then, for all $n \geq N_1$, $|y_n-\frac{1}{2}|<\frac{|x_n-2|}{2}<\frac{1}{2}\epsilon_1=\epsilon_2$. So, there exists some $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$, $|y_n-\frac{1}{2}|<\epsilon_2$, and thus, $\frac{1}{x_n}\to \frac{1}{2}$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.3.5}
+\newline
+\newline
+First, we will show the forward direction. Assume $x_n\to L$ and $y_n\to L$. Let $\epsilon > 0$. Then, there exists some $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$, $|x_n - L| < \epsilon$. There also exists some $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$, $|y_n - L| < \epsilon$. Choose $N=\max(N_1, N_2)$. Then, for all $n \geq N$, $|x_n - L| < \epsilon$ and $|y_n - L| < \epsilon$. If $n$ is odd, then let $n=2m-1$. Then, $m=\frac{n+1}{2}\ge \frac{N+1}{2}\ge N_1$. Then, $|z_n - L|=|x_m - L|<\epsilon$. If $n$ is even, then let $n=2m$. Then, $m=\frac{n}{2}\ge \frac{N}{2}\ge N_2$. Then, $|z_n - L|=|y_m - L|<\epsilon$. So, for all $n \geq N$, $|z_n - L| < \epsilon$, and thus, $(z_n)\to L$. If $n$ is even, then let $n=2m$. Then, $m=\frac{n}{2}\ge \frac{N}{2}\ge N_2$. Then, $|z_n - L|=|y_m - L|<\epsilon$. So, for all $n \geq N$, $|z_n - L| < \epsilon$, and thus, $(z_n)\to L$. Now, we will show the reverse direction. Assume $(z_n)\to L$. For any $\epsilon>0$, choose some $N \in \mathbb{N}$ such that for all $n \geq N$, $|z_n - L| < \epsilon$. For $(x_n)$, if $n\ge\lceil\frac{N+1}{2}\rceil$, then $2n-1\ge N$, so $|x_n - L|=|z_{2n-1} - L|<\epsilon$. So, $(x_n)\to L$. For $(y_n)$, if $n\ge\lceil\frac{N}{2}\rceil$, then $2n\ge N$, so $|y_n - L|=|z_{2n} - L|<\epsilon$. So, $(y_n)\to L$. Thus, $\lim x_n = \lim y_n$.
+\newline
+
+\underline{Exercise 2.3.6}
+\newline
+\newline
+By multiplying by the conjugate of $n-\sqrt{n^2+2n}$, we can write $b_n=\frac{(n-\sqrt{n^2+2n})(n+\sqrt{n^2+2n})}{n+\sqrt{n^2+2n}}=\frac{n^2-(n^2+2n)}{n+\sqrt{n^2+2n}}=\frac{-2n}{n+\sqrt{n^2+2n}}$. Then, we can factor an $n$ from the denominator to get $b_n=\frac{-2n}{n(1+\sqrt{1+\frac{2}{n}})}=\frac{-2}{1+\sqrt{1+\frac{2}{n}}}$. By the Algebraic Limit Theorem, we can split the limit of $b_n$ into the quotient of the limits of the numerator and denominator. The limit of the numerator is $\lim -2=-2$. The limit of the denominator is $\lim (1+\sqrt{1+\frac{2}{n}})$. Then, by the Algebraic Limit Theorem and the result from Exercise 2.3.1, $\lim (1+\sqrt{1+\frac{2}{n}})=1+\sqrt{\lim(1+\frac{2}{n})}$. Again, by the Algebraic Limit Theorem, $\lim(1+\frac{2}{n})=\lim1+2\lim\frac{1}{n}=1+2\cdot 0=1$. So, $\lim (1+\sqrt{1+\frac{2}{n}})=1+\sqrt{1}=2$. Thus, $\lim b_n=\frac{-2}{2}=-1$.
+\newline
+
+\underline{Exercise 2.3.8}
+\newline
+\begin{parts}
+    \part To show that $p(x_n)\to p(x)$, we will use the Algebraic Limit Theorem. Let $p(x)=a_kx^k+a_{k-1}x^{k-1}+\dots + a_1x + a_0$. Then, $p(x_n)=a_kx_n^k+a_{k-1}x_n^{k-1}+\dots + a_1x_n + a_0$. By the Algebraic Limit Theorem, $\lim p(x_n)=\lim (a_kx_n^k)+\lim (a_{k-1}x_n^{k-1})+\dots + \lim (a_1x_n) + \lim a_0$. Again, by the Algebraic Limit Theorem, $\lim (a_kx_n^k)=a_k\lim x_n^k$, $\lim (a_{k-1}x_n^{k-1})=a_{k-1}\lim x_n^{k-1}$, $\dots$, and $\lim (a_1x_n)=a_1\lim x_n$. Since $x_n^i=x_n\cdot x_n\cdot\dots\cdot x_n$ (i times), and $\lim x_n=x$, we have $\lim x_n^i=x^i$ by the Algebraic Limit Theorem. So, $\lim p(x_n)=a_kx^k+a_{k-1}x^{k-1}+\dots + a_1x + a_0=p(x)$.
+    \part Let $f(x)=\lfloor x\rfloor$ and $x_n=1-\frac{1}{2^n}$. Then, $\lim x_n=1$, but $\lim f(x_n)=\lim \lfloor 1-\frac{1}{2^n}\rfloor = \lim 0=0$, which does not equal $f(1)=\lfloor 1\rfloor=1$. So, it is not necessarily true that if $x_n\to x$, then $f(x_n)\to f(x)$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.3.11}
+\newline
+\begin{parts}
+    \part Assume $(x_n)\to L$. We want to show that $(y_n)\to L$. We can write $y_n=\frac{1}{n}\sum_{k=1}^{n}x_k$. Then, $|y_n-L|=|\frac{1}{n}\sum_{k=1}^{n}x_k - L|=\frac{1}{n}\sum_{k=1}^{n}|x_k - L|$. Given $\epsilon > 0$, there exists some $N \in \mathbb{N}$ such that for all $n \geq N$, $|x_n - L| < \epsilon$. Then, $\frac{1}{n}\sum_{k=1}^{n}|x_k - L|=\frac{1}{n}\sum_{k=1}^{N-1}|x_k - L|+\frac{1}{n}\sum_{k=N}^{n}|x_k - L|$. For the first sum, let $M=\sum_{k=1}^{N-1}|x_k - L|$. Then, $\frac{M}{n}=\frac{1}{n}\sum_{k=1}^{N-1}|x_k - L|$. For a large enough $n$, such that $n>\frac{2M}{\epsilon}$, we have $\frac{M}{n}<\frac{\epsilon}{2}$. For the second sum, for $k\ge N$, $|x_k - L| < \frac{\epsilon}{2}$, so $\frac{1}{n}\sum_{k=N}^{n}|x_k - L|<\frac{1}{n}\sum_{k=N}^{n}\frac{\epsilon}{2}=\frac{1}{n}\cdot(n-N+1)\cdot\frac{\epsilon}{2}=\frac{(n-N+1)\epsilon}{2n}<\frac{\epsilon}{2}$ (since $n-N+1<n$). Therefore, $|\frac{1}{n}\sum_{k=1}^{n}x_k - L|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$. So, $(y_n)\to L$.
+    \part Let $x_n=(-1)^n$. Then, $(y_n)$ is the sequence of averages of the first $n$ terms of $x_n$. If $n$ is odd, then $y_n=\frac{1}{n}\sum_{k=1}^{n}(-1)^k=\frac{1}{n}\cdot 0=0$. If $n$ is even, then $y_n=\frac{1}{n}\sum_{k=1}^{n}(-1)^k=\frac{1}{n}\cdot (-1)=\frac{-1}{n}$. So, if $n$ is odd, then $y_n=0$, and if $n$ is even, then $y_n=\frac{-1}{n}$. Then, $\lim y_n=0$, but $(x_n)$ does not converge, as it oscillates between 1 and -1. So, it is possible that $(y_n)$ converges, but $(x_n)$ does not converge.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.4.1}
+\newline
+\begin{parts}
+    \part We need to show that $(x_n)$ is monotone and bounded to show that it converges by the Monotone Convergence Theorem. We will show that $(x_n)$ is decreasing by induction. For the base case, $x_1=3$ and $x_2=\frac{1}{4-3}=1$. Since $x_2 < x_1$, the base case holds. For the inductive step, assume $x_n < x_{n-1}$. Then, $x_{n+1}=\frac{1}{4-x_n}<\frac{1}{4-x_{n-1}}=x_n$. So, $x_{n+1} < x_n$, and the sequence is monotone decreasing. Next, we will show that $x_n$ is bounded below by 0. The base case is $x_1=3$, which is greater than 0. For the inductive step, assume $x_n > 0$. Then, $x_{n+1}=\frac{1}{4-x_n}>\frac{1}{4-0}=\frac{1}{4}>0$. So, $x_{n+1} > 0$, and the sequence is bounded below by 0. Since $x_n$ is monotone decreasing and bounded below, it converges by the Monotone Convergence Theorem.
+    \part Since $(x_n)$ converges, say to $L$, the sequence $(x_{n+1})$ is just $(x_n)$ shifted by one index. Convergence does not depend on initial terms, so $(x_{n+1})$ also converges to $L$.
+    \part Taking the limit of each side of the original recursive equation, with the limit of $(x_n)=(x_{n+1})=L$, we have $L=\frac{1}{4-L}$. Then, $L(4-L)=1$, so $4L-L^2=1$, and thus, $L^2-4L+1=0$. By the quadratic formula, $L=\frac{4\pm\sqrt{16-4}}{2}=\frac{4\pm\sqrt{12}}{2}=2\pm\sqrt{3}$. Since the sequence is monotone decreasing and the first term is less than $2+\sqrt{3}$, the limit must be $L=2-\sqrt{3}$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.4.2}
+\newline
+\begin{parts}
+    \part This argument is wrong because the limit of the recursive equation is not guaranteed to be correct if the limit of the sequence is not yet known to exist. The limit of the recursive equation is only valid if the sequence converges, so we cannot use the limit of the recursive equation to show that the sequence converges.
+    \part The strategy in (a) can be applied to compute the limit, as this sequence is both monotone and bounded, and is therefore guaranteed to converge by the Monotone Convergence Theorem. First to prove that $y_n$ is monotone increasing, we can use induction. For the base case, $y_1=1$ and $y_2=3-\frac{1}{y_1}=2$. Since $y_2 > y_1$, the base case holds. For the inductive step, assume $y_n > y_{n-1}$. Then, $y_{n+1}=3-\frac{1}{y_n}>3-\frac{1}{y_{n-1}}=y_n$. So, $y_{n+1} > y_n$, and the sequence is monotone increasing. Next, we will show that $y_n$ is bounded above by 3. The base case is $y_1=1$, which is less than 3. For the inductive step, assume $y_n < 3$. Then, $y_{n+1}=3-\frac{1}{y_n}<3-\frac{1}{3}=\frac{8}{3}<3$. So, $y_{n+1} < 3$, and the sequence is bounded above by 3. Since $y_n$ is monotone increasing and bounded above, it converges by the Monotone Convergence Theorem. Let the limit of $(y_n)$ be $L$. Then, taking the limit of each side of the original recursive equation, with the limit of $(y_n)=(y_{n+1})=L$, we have $L=3-\frac{1}{L}$. Then, $L^2-3L+1=0$. By the quadratic formula, $L=\frac{3\pm\sqrt{9-4}}{2}=\frac{3\pm\sqrt{5}}{2}$. Since the sequence is monotone increasing and the first term is greater than $\frac{3-\sqrt{5}}{2}$, the limit must be $L=\frac{3+\sqrt{5}}{2}$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.4.3}
+\newline
+\begin{parts}
+    \part We can define the sequence as $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2+a_n}$ for $n\ge 1$. We will show that $(a_n)$ is monotone and bounded to show that it converges by the Monotone Convergence Theorem. We will show that $(a_n)$ is increasing by induction. For the base case, $a_1=\sqrt{2}$ and $a_2=\sqrt{2+\sqrt{2}}$. Since $\sqrt{2+\sqrt{2}} > \sqrt{2}$, the base case holds. For the inductive step, assume $a_n > a_{n-1}$. Then, $a_{n+1}=\sqrt{2+a_n}>\sqrt{2+a_{n-1}}=a_n$. So, $a_{n+1} > a_n$, and the sequence is monotone increasing. Next, we will show that $a_n$ is bounded above by 2. The base case is $a_1=\sqrt{2}$, which is less than 2. For the inductive step, assume $a_n < 2$. Then, $a_{n+1}=\sqrt{2+a_n}<\sqrt{2+2}=2$. So, $a_{n+1} < 2$, and the sequence is bounded above by 2. Since $a_n$ is monotone increasing and bounded above, it converges by the Monotone Convergence Theorem. Then, we can use the recursive equation to compute the limit. Let the limit of $(a_n)$ be $L$. Then, taking the limit of each side of the original recursive equation, with the limit of $(a_n)=(a_{n+1})=L$, we have $L=\sqrt{2+L}$. Then, $L^2-2=L$. So, $L^2-L-2=0$. After factoring, we have $(L-2)(L+1)=0$. So, $L=2$ or $L=-1$. Since the sequence is monotone increasing and the first term is greater than -1, the limit must be $L=2$.
+    \part We can define the sequence as $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2a_n}$ for $n\ge 1$. We will show that $(a_n)$ is monotone and bounded to show that it converges by the Monotone Convergence Theorem. We will show that $(a_n)$ is increasing by induction. For the base case, $a_1=\sqrt{2}$ and $a_2=\sqrt{2\sqrt{2}}$. Since $\sqrt{2\sqrt{2}} > \sqrt{2}$, the base case holds. For the inductive step, assume $a_n > a_{n-1}$. Then, $a_{n+1}=\sqrt{2a_n}>\sqrt{2a_{n-1}}=a_n$. So, $a_{n+1} > a_n$, and the sequence is monotone increasing. Next, we will show that $a_n$ is bounded above by 2. The base case is $a_1=\sqrt{2}$, which is less than 2. For the inductive step, assume $a_n < 2$. Then, $a_{n+1}=\sqrt{2a_n}<\sqrt{4}=2$. So, $a_{n+1} < 2$, and the sequence is bounded above by 2. Since $a_n$ is monotone increasing and bounded above, it converges by the Monotone Convergence Theorem. Then, we can use the recursive equation to compute the limit. Let the limit of $(a_n)$ be $L$. Then, taking the limit of each side of the original recursive equation, with the limit of $(a_n)=(a_{n+1})=L$, we have $L=\sqrt{2L}$. Then, $L^2=2L$. So, $L^2-2L=0$. After factoring, we have $L(L-2)=0$. So, $L=0$ or $L=2$. Since the sequence is monotone increasing and the first term is greater than 0, the limit must be $L=2$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.4.8}
+\newline
+\begin{parts}
+    \part Let $s_m$ be the partial sum of the first $m$ terms of $\sum_{n=1}^{\infty} \frac{1}{2^n}$. Then, $s_m=\frac{1}{2}+\frac{1}{4}+\dots + \frac{1}{2^m}$. We can write $s_1=\frac{1}{2}$ and $s_2=\frac{1}{2}+\frac{1}{4}=\frac{3}{4}$. We can see a pattern: $s_m=1-\frac{1}{2^m}$. To prove this, we use induction. For the base case, $s_1=1-\frac{1}{2^1}=\frac{1}{2}$, which is correct. For the inductive step, assume $s_k=1-\frac{1}{2^k}$ for some $k\ge 1$. Then, $s_{k+1}=s_k+\frac{1}{2^{k+1}}=1-\frac{1}{2^k}+\frac{1}{2^{k+1}}=1-\frac{2-1}{2^{k+1}}=1-\frac{1}{2^{k+1}}$. So, the formula holds for all $m\ge 1$. Since $\lim(1-\frac{1}{2^m})=1$, the series converges to 1.
+    \part Let $s_m$ be the partial sum of the first $m$ terms of $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$. Then, $s_m=\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots + \frac{1}{m(m+1)}$. We can write $s_1=\frac{1}{1\cdot 2}$ and $s_2=\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}$. We can see a pattern: $s_m=1-\frac{1}{m+1}$. To prove this, we use induction. For the base case, $s_1=1-\frac{1}{2}=\frac{1}{2}$, which is correct. For the inductive step, assume $s_k=1-\frac{1}{k+1}$ for some $k\ge 1$. Then, $s_{k+1}=s_k+\frac{1}{(k+1)(k+2)}=1-\frac{1}{k+1}+\frac{1}{(k+1)(k+2)}=1-\frac{k+2-1}{(k+1)(k+2)}=1-\frac{1}{k+2}$. So, the formula holds for all $m\ge 1$. Since $\lim(1-\frac{1}{m+1})=1$, the series converges to 1.
+    \part Let $s_m$ be the partial sum of the first $m$ terms of $\sum_{n=1}^{\infty} \log(\frac{n+1}{n})$. Then, $s_m=\log(\frac{2}{1})+\log(\frac{3}{2})+\dots + \log(\frac{m+1}{m})$. We can write $s_1=\log(\frac{2}{1})=\log(2)$ and $s_2=\log(\frac{2}{1})+\log(\frac{3}{2})=\log(\frac{3}{1})=\log(3)$. We can see a pattern: $s_m=\log(m+1)$. To prove this, we use induction. For the base case, $s_1=\log(2)=\log(1+1)$, which is correct. For the inductive step, assume $s_k=\log(k+1)$ for some $k\ge 1$. Then, $s_{k+1}=s_k+\log(\frac{k+2}{k+1})=\log(k+1)+\log(\frac{k+2}{k+1})=\log(k+2)$. So, the formula holds for all $m\ge 1$. Since $\lim(\log(m+1))=\infty$, the series diverges.
+    \newline
+\end{parts}
+
+\end{document}
