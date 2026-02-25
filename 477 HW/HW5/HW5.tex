@@ -1,0 +1,64 @@
+\documentclass{exam}
+\usepackage{amsmath}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 5}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 5}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\begin{parts}
+    \part Let $n=1$. The chance of exactly two points being played is the chance of A winning the first two points or B winning the first two points. The chance of A winning the first two games is $p^2$ and the chance of B winning the first two games is $(1-p)^2$. Since the intersection of the events is empty, the chance of exactly two points being played is $p^2+(1-p)^2$. It is impossible for an odd number of points being played. If the game ends when A has $k$ points, B will have either $k-2$ or $k+2$ points. So the total points will be either $2(k-1)$ or $2(k+1)$, both of which are even numbers. For $n=2$, the first two points must be won by different teams and then a team must win two in a row. The first two points being won by different teams gives $2p(1-p)$ and either team winning two in a row is given by $p^2+(1-p)^2$. So the probability of 4 games being played is $2p(1-p)(p^2+(1-p)^2)$. Now for the $2n$ points case, the first $2n-2$ points can be split into $n-1$ blocks of two points. In each block, two different teams must win, giving $(2p(1-p))^{n-1}$. Then, the last two points must be won by the same team, giving $p^2+(1-p)^2$. Therefore, the probability of $2n$ points being played is $(2p(1-p))^{n-1}(p^2+(1-p)^2)$.
+    \part For A to win, we are asking for the probability of the first blocks of two points being won by two different teams and then A winning the last two points. Let $A$ be the event of team A winning and $B$ be the event of team B winning. Also, let $A_w$ and $B_w$ be the events of each team winning a block of two. Then, $P(A)=P(A)P(A\cup B)=P(A_w)P(A_w\cup B_w)=\frac{p^2}{p^2+(1-p)^2}$.
+    \newline
+\end{parts}
+
+\underline{Problem 2}
+\newline
+\begin{parts}
+    \part Let $A$, $B$, and $C$ be the events of passing each of the three exams. We are looking for $P(ABC)$. This is equal to $P(C|AB)P(B|A)P(A)$. We are given that $P(A)=0.9$, $P(B|A)=0.8$, and $P(C|AB)=0.7$, so $P(ABC)=0.9\cdot0.8\cdot0.7$.
+    \part We are looking for $P(B^c|(ABC)^c)$. The chance of her failing the second given that she did not pass all three exams is equal to the chance of her failing the second given that she failed any of the exams. So, $P(B^c|(ABC)^c)=\frac{P(B^c|A)P(A)}{1-P(ABC)}=\frac{(1-P(B|A))P(A)}{1-P(ABC)}=\frac{(1-0.8)\cdot0.9}{1-0.9\cdot0.8\cdot0.7}=\frac{0.2\cdot0.9}{1-0.9\cdot0.8\cdot0.7}$.
+    \newline
+\end{parts}
+
+\underline{Problem 3}
+\newline
+\begin{parts}
+    \part Let $D$ be the event that a family owns a cat and $C$ be the event that they own a dog. We are given that $P(D)=0.36$, $P(C|D)=0.22$, $P(C)=0.3$. We are looking for $P(CD)$, which is equal to $P(C|D)P(D)=0.22\cdot0.36$.
+    \part Now we are looking for $P(D|C)$. Then, we have $P(D|C)=\frac{P(CD)}{P(C)}=\frac{0.22\cdot0.36}{0.3}$.
+    \newline
+\end{parts}
+
+\underline{Problem 4}
+\newline
+\begin{parts}
+    \part Let $F$ be the event that a student is female and $C$ be the event that a student is a computer science major. We are given that $P(F)=0.52$, $P(C)=0.05$, $P(CF)=0.02$. We are looking for $P(F|C)$. This is equal to $\frac{P(CF)}{P(C)}=\frac{0.02}{0.05}$.
+    \part Now we are looking for for $P(C|F)$. This is equal to $\frac{P(CF)}{P(F)}=\frac{0.02}{0.52}$
+    \newline
+\end{parts}
+
+\underline{Problem 5}
+\newline
+\begin{parts}
+    \part Let $L$ be the event that Joe is late and $R$ is the event that it is rainy. We are given that $P(L|R)=0.3$, $P(L|R^c)=0.1$, and $P(R)=0.7$. We are looking for $P(L^c)$. This is equal to $1-P(L)=1-(P(L|R)P(R)+P(L|R^c)P(R^c))=1-(0.3\cdot0.7+0.1\cdot(1-0.7))=0.7\cdot0.7+0.9\cdot0.3$.
+    \part Now we are looking for $P(R|L^c)$. This is equal to $\frac{P(RL^c)}{P(L^c)}=\frac{P(L^c|R)P(R)}{P(L^c)}=\frac{(1-P(L|R))P(R)}{P(L^c)}=\frac{(1-0.3)\cdot0.7}{0.7\cdot0.7+0.9\cdot0.3}=\frac{0.7\cdot0.7}{0.7\cdot0.7+0.9\cdot0.3}$.
+    \newline
+\end{parts}
+
+\underline{Problem 6}
+\newline
+\begin{parts}
+    \part Let $L$ be the event that a team is leading 3-0, and $A_L$ and $B_L$ be the events that A and B are leading. We are looking for $P(A_L|L)$. This is equal to $\frac{P(A_LL)}{P(L)}=\frac{P(A_L)}{P(L)}$. The only way for A to lead 3-0 is if they won the first 3 games, which has probability $p^3$. For B to lead 3-0, they need to have won the first games, which has probability $(1-p)^3$. For either team to be leading 3-0, the probability is $p^3+(1-p)^3$ as the intersection of A and B leading is empty. So, $P(A_L|L)=\frac{p^3}{p^3+(1-p)^3}$.
+    \part Now we are looking for the probability that a team wins if it is leading by 3-0. Let $E$ be the event that a team wins and $F$ be the event that the same team leads 3-0. We are looking for $P(E|F)$. Using the law of total probability, this is equal to $P(E|FA_L)P(A_L|F)+P(E|FA_L^c)P(A_L^c|F)$. The complement of A leading 3-0 given that a team leads 3-0 is B leading 3-0. Also, the probability of  a team winning and A winning is the same as the probability of A winning. Also, the probability of the same team winning as the one leading given that A is leading is the probability of A winning given A is leading. So, we now have $P(A|A_L)P(A|A_L\cup B_L)+P(B|B_L)P(B|A_L\cup B_L)$. The only way for A to lose when leading is if B wins four times in a row, and vice verse for B to lose when leading. So, we have $(1-(1-p)^4)\cdot\frac{p^3}{p^3+(1-p)^3}+(1-p^4)\cdot\frac{(1-p)^3}{p^3+(1-p)^3}$
+\end{parts}
+
+
+\end{document}
