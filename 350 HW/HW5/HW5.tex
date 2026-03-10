@@ -1,0 +1,154 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 5}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 5}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{}
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 2.3.3}
+\newline
+\begin{parts}
+    \part To compute $[U]_\beta^\gamma$, we need to take the standard basis vectors of $P_2(\mathbb{R})$, apply $U$ to them, and write them using the standard basis vectors of $\mathbb{R}^3$. The vectors are $\{1,x,x^2\}$. $U(1)=(1,0,1)=e_1+e_3$, $U(x)=(1,0,-1)=e_1-e_3$, and $U(x^2)=(0,1,0)=e_2$. Arranging these in matrix form, we have
+    $\begin{bmatrix}
+        1 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & -1 & 0
+    \end{bmatrix}$, which is $[U]_\beta^\gamma$. Doing the same for $[T]_\beta^\beta$, we apply $T$ to each vector in $\{1,x,x^2\}$. $T(1)=2=2e_1$, $T(x)=3+3x=3e_1+3e_2$, and $T(x^2)=6x+4x^2=6e_2+4e_3$. Arranging this in matrix form, we have
+    $\begin{bmatrix}
+        2 & 3 & 0 \\
+        0 & 3 & 6 \\
+        0 & 0 & 4
+    \end{bmatrix}$, which is $[T]_\beta^\beta$. To do the same for $[UT]_\beta^\gamma$, we apply $T$ and then $U$ to each vector in $\{1,x,x^2\}$. $U(T(1))=(2,0,2)=2e_1+2e_3$, $U(T(x))=(6,0,0)=6e_1$, and $U(T(x^2))=6x+4x^2=(6,4,-6)=6e_1+4e_2-6e_3$. Arranging this in matrix form, we have
+    $\begin{bmatrix}
+        2 & 6 & 6 \\
+        0 & 0 & 4 \\
+        2 & 0 & -6
+    \end{bmatrix}$, which is $[UT]_\beta^\gamma$. Theorem 2.11 says that $[UT]_\beta^\gamma=[U]_\beta^\gamma[T]_\beta^\beta$, which we can verify by matrix multiplication. Since
+    $\begin{bmatrix}
+        1 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & -1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        2 & 3 & 0 \\
+        0 & 3 & 6 \\
+        0 & 0 & 4
+    \end{bmatrix}=
+    \begin{bmatrix}
+        2 & 6 & 6 \\
+        0 & 0 & 4 \\
+        2 & 0 & -6
+    \end{bmatrix}$, we computed $[UT]_\beta^\gamma$ correctly.
+    \part $[h(x)]_\beta$ can be computed by writing $h(x)$ in the standard basis vectors of $P_2(\mathbb{R})$, which are $\{1,x,x^2\}$. So, $[h(x)]_\beta=3e_1-2e_2+e_3=
+    \begin{bmatrix}
+    3 \\
+    -2 \\
+    1
+    \end{bmatrix}$. To compute $[U(h(x))]_\gamma$, we need to apply $U$ to $h(x)$ and then write the result in the standard basis vectors of $\mathbb{R}^3$. $U(h(x))=(1,1,5)=e_1+e_2+5e_3$. So, $[U(h(x))]_\gamma=
+    \begin{bmatrix}
+        1 \\
+        1 \\
+        5
+    \end{bmatrix}$. Theorem 2.14 says that $[U(h(x))]=[U]_\beta^\gamma[h(x)]_\beta$. Since $
+    \begin{bmatrix}
+        1 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & -1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        3 \\
+        -2 \\
+        1
+    \end{bmatrix}=
+    \begin{bmatrix}
+        1 \\
+        1 \\
+        5
+    \end{bmatrix}$, we computed $[U(h(x))]$ correctly.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.3.4.d}
+\newline
+\newline
+Exercise 2.2.5.d defines $T:P_2(\mathbb{R})\to\mathbb{R}$ as $T(f(x))=f(2)$. Applying $T$ to the basis vectors of $P_2(\mathbb{R})$, which are $\{1,x,x^2\}$, gives $T(1)=1$, $T(x)=2$, and $T(x^2)=4$. So, letting $\beta$ be the standard basis of $P_2(\mathbb{R})$ and $\gamma$ be the standard basis of $\mathbb{R}$, we have $[T]_\beta^\gamma=
+\begin{bmatrix}
+    1 & 2 & 4
+\end{bmatrix}$. Now, to compute $[T(f(x))]_\gamma$ when $f(x)=6-x+2x^2$, we can use Theorem 2.14, which states that $[T(f(x))]_\gamma=[T]_\beta^\gamma[f(x)]_\beta$. Writing $f(x)$ in the standard basis vectors of $P_2(\mathbb{R})$, we have $[f(x)]_\beta=6e_1-e_2+2e_3=
+\begin{bmatrix}
+    6 \\
+    -1 \\
+    2
+\end{bmatrix}$. Then, we can compute $[T(f(x))]_\gamma=[T]_\beta^\gamma[f(x)]_\beta=
+\begin{bmatrix}
+    1 & 2 & 4
+\end{bmatrix}
+\begin{bmatrix}
+    6 \\
+    -1 \\
+    2
+\end{bmatrix}
+=12$.
+\newline
+
+\underline{Exercise 2.4.2}
+\newline
+\begin{parts}
+    \part $T$ is not invertible.  By the corollary to Theorem 2.18, $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible. In this case $\beta$ is the standard basis of $\mathbb{R}^2$ and $\gamma$ is the standard basis of $\mathbb{R}^3$. However, these bases have different dimensions, so $[T]_\beta^\gamma$ is not square. Then, $[T]_\beta^\gamma$ is also not invertible, so $T$ is not invertible.
+    \part $T$ is not invertible.  By the corollary to Theorem 2.18, $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible. In this case $\beta$ is the standard basis of $\mathbb{R}^2$ and $\gamma$ is the standard basis of $\mathbb{R}^3$. However, these bases have different dimensions, so $[T]_\beta^\gamma$ is not square. Then, $[T]_\beta^\gamma$ is also not invertible, so $T$ is not invertible.
+    \part $T$ is invertible. By the corollary to Theorem 2.18, $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible. $[T]_\beta^\gamma=
+    \begin{bmatrix}
+        3 & 0 & -2 \\
+        0 & 1 & 0 \\
+        3 & 4 & 0
+    \end{bmatrix}$. The determinant of the matrix is 6, which is nonzero, so the matrix is invertible. Therefore, $T$ is invertible.
+    \part $T$ is not invertible.  By the corollary to Theorem 2.18, $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible. In this case $\beta$ is the standard basis of $P_3(\mathbb{R})$ and $\gamma$ is the standard basis of $P_2(\mathbb{R})$. However, these bases have different dimensions, so $[T]_\beta^\gamma$ is not square. Then, $[T]_\beta^\gamma$ is also not invertible, so $T$ is not invertible.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.4.3.a}
+\newline
+\newline
+By the corollary of Theorem 2.19, $F^3$ is isomorphic to $P_3(F)$ if and only if $\dim(P_3(F))=3$. $\{1,x,x^2,x^3\}$ is a basis for $P_3(F)$, so $\dim(P_3(F))=4$. Therefore, $F^3$ is not isomorphic to $P_3(F)$.
+\newline
+
+\underline{Exercise 2.4.3.c}
+\newline
+\newline
+By Theorem 2.19, $M_{2\times2}(\mathbb{R})$ is isomorphic to $P_3(\mathbb{R})$ if and only if $\dim(M_{2\times2}(\mathbb{R}))=\dim(P_3(\mathbb{R}))$. A basis for $M_{2\times2}(\mathbb{R})$ is $\{
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{bmatrix}
+    ,
+    \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix}
+    ,
+    \begin{bmatrix}
+        0 & 0 \\
+        1 & 0
+    \end{bmatrix}
+    ,
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{bmatrix}
+\}$, so $\dim(M_{2\times2}(\mathbb{R}))=4$. A basis for $P_3(\mathbb{R})$ is $\{1,x,x^2,x^3\}$, so $\dim(P_3(\mathbb{R}))=4$. Therefore, $\dim(M_{2\times2}(\mathbb{R}))=\dim(P_3(\mathbb{R}))$ and $M_{2\times2}(\mathbb{R})$ is isomorphic to $P_3(\mathbb{R})$.
+\newline
+
+\underline{Exercise 2.4.7.a}
+\newline
+\newline
+Assume $A$ is invertible. If $A^2=0$, we know $AA=0$. We can right multiply by $A^{-1}$ to get $AAA^{-1}=0A^{-1}$. Then, we have $AI=0$, which implies $A=0$. However, the determinant of the zero matrix is 0, and $A$ is not invertible. Therefore, $A$ is not invertible.
+
+\end{document}
