@@ -1,0 +1,67 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 7}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 7}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\begin{parts}
+    \part $E(X)>E(Y)$ because the probability of selecting a student from a bus with more students is greater than the probability of selecting a student from a bus with less students. So, the expected value for $X$ is weighted more towards buses with more students, while for $Y$, all buses are weighted equally.
+    \part The probability of selecting a student from the buses with 25, 33, 40, and 50 students are $\frac{25}{148}$, $\frac{33}{148}$, $\frac{40}{148}$, and $\frac{50}{148}$ respectively. Multiplying these by the number of students on each bus and adding gives $E(X)=25\cdot\frac{25}{148}+33\cdot\frac{33}{148}+40\cdot\frac{40}{148}+50\cdot\frac{50}{148}$. For $E(Y)$, the probabilities are instead $\frac{1}{4}$ each, so $E(Y)=25\cdot\frac{1}{4}+33\cdot\frac{1}{4}+40\cdot\frac{1}{4}+50\cdot\frac{1}{4}$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2}
+\newline
+\begin{parts}
+    \part The probability of getting one heads is the chance of the first coin getting heads and the second getting tails or vice versa. So, $P(X=1)=0.6\cdot0.3+0.4\cdot0.7$.
+    \part Since zero heads contributes nothing to $E(X)$, we can ignore the case. Two heads happens with $P(X=2)=0.6\cdot0.7$. So, multiplying the number of heads with their respective probability, $E(X)=1\cdot(0.6\cdot0.3+0.4\cdot0.7)+2\cdot0.6\cdot0.7$.
+    \newline
+\end{parts}
+
+\underline{Exercise 3}
+\newline
+\newline
+Profit ($P$) and payout ($O$) are random variables, while charge ($C$) and payout amount ($A$) are constants. We know $P=C-O$. Let $I$ be the indicator function such that $I_E=1$ if $E$ happens and $I_E=0$ otherwise. Then, $O=AI_E$. So, $P=C-AI_E$ and $E(P)=C-AE(I_E)$. Since $E(P)=0.1A$ and $E(I_E)=p$, $0.1A=C-Ap$. Therefore, $C=A(p+0.1)$.
+\newline
+
+\underline{Exercise 4}
+\newline
+\begin{parts}
+    \part The probability of selecting the same color is $2\cdot\frac{5}{10}\cdot\frac{4}{9}=\frac{4}{9}$ and the probability of selecting different colors is $2\cdot\frac{5}{10}\cdot\frac{5}{9}=\frac{5}{9}$. So, the expected value is $1.10\cdot\frac{4}{9}+(-1.00)\cdot\frac{5}{9}$.
+    \part To calculate variance, we can use $\operatorname{Var}(X)=E(X^2)-E^2(X)$. To find $E(X^2)$, we take the sum of the square of each outcome multiplied by their probability, getting $E(X^2)=(1.10)^2\cdot\frac{4}{9}+(-1.00)^2\cdot\frac{5}{9}$. Since $E(X)=1.10\cdot\frac{4}{9}+(-1.00)\cdot\frac{5}{9}$, $E^2(X)=(1.10\cdot\frac{4}{9}-1.00\cdot\frac{5}{9})^2=(\frac{0.6}{9})^2$. Therefore, $\operatorname{Var}(X)=(1.10)^2\cdot\frac{4}{9}+(-1.00)^2\cdot\frac{5}{9}-(\frac{0.6}{9})^2$.
+    \newline
+\end{parts}
+
+\underline{Exercise 5}
+\newline
+\begin{parts}
+    \part $E((2+X)^2)=\operatorname{Var}(2+X)+E^2(2+X)=5+(2+1)^2=14$
+    \part $\operatorname{Var}(4+3X)=3^2\cdot5=45$
+    \newline
+\end{parts}
+
+\underline{Exercise 6}
+\newline
+\begin{parts}
+    \part Let $X$ be the random variable representing the number of questions correct by both. Let $p=0.7\cdot0.4$. For $P(X=0)$, we know every question has to be gotten wrong by at least one student, so $P(X=0)=(1-p)^{10}$. Also, $P(X=10)=p^{10}$. For $k$ questions right, the probability is $P(X=k)=\binom{10}{k}p^k(1-p)^{10-k}$. So, $E(X)=\sum_{k=0}^{10}k\binom{10}{k}p^k(1-p)^{10-k}=10p$.
+    \part Let $Y$ be the random variable representing the number of questions correct by either. Let $p=0.7+0.4-0.7\cdot0.4$. For $P(Y=0)$, we know every question has to be gotten wrong by both students, so $P(Y=0)=(1-p)^{10}$. Also, $P(Y=10)=p^{10}$. For $k$ questions right, the probability is $P(Y=k)=\binom{10}{k}p^k(1-p)^{10-k}$. Using the formula for variance, we know $\operatorname{Var}(Y)=E(Y^2)-E^2(Y)=\sum_{k=0}^{10}k^2\binom{10}{k}p^k(1-p)^{10-k}-(\sum_{k=0}^{10}k\binom{10}{k}p^k(1-p)^{10-k})^2=10p(1-p)$.
+    \newline
+\end{parts}
+
+\underline{Exercise 7}
+\newline
+\newline
+The size of the sample space is $|S|=\binom{20}{3}$. For $k$ defective items in the sample, the probability is $\frac{\binom{4}{k}\binom{16}{3-k}}{|S|}$. We can sum these and multiply by the number of defectives to find expected value, or use a simpler approach. Any given item is defective with probability $\frac{4}{20}$, so in a sample of size 3, the expected number of defective items is $3\cdot\frac{4}{20}$.
+
+\end{document}
