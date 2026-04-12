@@ -1,0 +1,136 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 8}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 8}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 4.2.2}
+\newline
+\begin{parts}
+    \part We want $\delta$ such that $0<|x-3|<\delta$ implies $|(5x-6)-9|<1$.
+    \[|(5x-6)-9|<1\]
+    \[|5x-15|<1\]
+    \[5|x-3|<1\]
+    \[|x-3|<\frac{1}{5}\]
+    Therefore, $\delta$ can be any value that is at most $\frac{1}{5}$. So, the largest possible $\delta$ is $\frac{1}{5}$.
+    \part We want $\delta$ such that $0<|x-4|<\delta$ implies $|\sqrt{x}-2|<1$. $|\sqrt{x}-2|<1\implies-1<\sqrt{x}-2<1\implies1<\sqrt{x}<3$. Since all terms are positive, we can square the inequality. So, $1<x<9$. We know that $V_\delta(4)$ is centered at 4, so we find the distance from 4 to 1 and to 9. This gives 3 and 5. We cannot choose $\delta$ to be 5, since that gives values of $x$ below 1, which do not satisfy the inequality. So, $\delta=3$.
+    \part We want $\delta$ such that $0<|x-\pi|<\delta$ implies $|\lfloor x\rfloor-3|<1$. $|\lfloor x\rfloor-3|<1\implies-1<\lfloor x\rfloor-3<1\implies2<\lfloor x\rfloor<4$. Since $\lfloor x\rfloor$ is not allowed to be 2, the minimum value of $x$ must be 3. Since $\lfloor x\rfloor$ is not allowed to be 4, $x$ must be less than 4. So, $3\le x<4$. $\pi$ is closer to 3 than 4, so $\delta=\pi-3$. Any larger $\delta$ would allow values of $x$ less than 3, which does not satisfy the inequality.
+    \part This is the same question as the last part, but with a smaller $\epsilon$. So, we want $0<|x-\pi|<\delta$ implies $|\lfloor x\rfloor-3|<0.01$. $|\lfloor x\rfloor-3|<0.01\implies-0.01<\lfloor x\rfloor-3<0.01\implies2.99<\lfloor x\rfloor<3.01$. $\lfloor x\rfloor$ only takes integer values, so we know $\lfloor x\rfloor=3$. This implies that $3\le x<4$. This gives the same result as the last question, so $\delta=\pi-3$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.2.4}
+\newline
+\begin{parts}
+    \part We want $\delta$ such that $0<|x-10|<\delta$ implies $|\frac{1}{\lfloor x\rfloor}-\frac{1}{10}|<\frac{1}{2}$. This implies $-\frac{1}{2}<\frac{1}{\lfloor x\rfloor}-\frac{1}{10}$ and $\frac{1}{\lfloor x\rfloor}-\frac{1}{10}<\frac{1}{2}$. Looking at the first inequality, we want $\frac{1}{\lfloor x\rfloor}>-\frac{2}{5}$. The only values of $\lfloor x\rfloor$ that do not satisfy this are $-2,-1,0$. So, $x\in(-\infty,-2)\cup[1,\infty)$. From the second inequality, we want $\frac{1}{\lfloor x\rfloor}<\frac{3}{5}$. The only values of $\lfloor x\rfloor$ that do not satisfy this are $0,1$. So, $x\in(-\infty,0)\cup[2,\infty)$. Taking the intersection of the allowed values of $x$, we have $x\in(-\infty,-2)\cup[2,\infty)$. Then, $x\notin[-2,2)$. The closest value of this interval to 10 is 2, so the maximum value of $\delta$ is $10-2=8$. 
+    \part We want $\delta$ such that $0<|x-10|<\delta$ implies $|\frac{1}{\lfloor x\rfloor}-\frac{1}{10}|<\frac{1}{50}$. This implies $-\frac{1}{50}<\frac{1}{\lfloor x\rfloor}-\frac{1}{10}<\frac{1}{50}\implies\frac{2}{25}<\frac{1}{\lfloor x\rfloor}<\frac{3}{25}\implies\frac{25}{2}>\lfloor x\rfloor>\frac{25}{3}$. This means that $x$ is at least 9 and less than 13. A $\delta$ greater than 1 causes the interval around 10 to include values less than 9, which is not allowed. So, $\delta=1$.
+    \part This claim is erroneous because the one-sided limits are not equal, so the limit does not exist. For the tested $\epsilon$ values, there was a corresponding $\delta$ that caused all $x\in V_\delta(10)$ to satisfy $|\frac{1}{\lfloor x\rfloor}-\frac{1}{10}|<\epsilon$. However, we can find a $\epsilon$ such that no $\delta$ can satisfy the inequality. The left-sided limit is equal to $\frac{1}{9}$, so we want a $\epsilon$ such that $\frac{1}{9}-\frac{1}{10}>\epsilon$. So, $\epsilon<\frac{1}{90}$. For any such $\epsilon$, there exists no $\delta$ such that $x\in V_\delta(10)$ implies $|\frac{1}{\lfloor x\rfloor}-\frac{1}{10}|<\epsilon$. This is because any value of $x<\frac{1}{10}$ in $V_\delta(10)$ causes $\frac{1}{\lfloor x\rfloor}=\frac{1}{9}$ and $\frac{1}{9}-\frac{1}{10}>\epsilon$. Therefore, the largest such $\epsilon$ is $\frac{1}{90}$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.2.5}
+\newline
+\begin{parts}
+    \part Let $\epsilon>0$. We want $\delta$ such that $0<|x-2|<\delta$ implies $|(3x+4)-10|<\epsilon$.
+    \[|(3x+4)-10|<\epsilon\]
+    \[|3x-6|<\epsilon\]
+    \[3|x-2|<\epsilon\]
+    \[|x-2|<\frac{\epsilon}{3}\]
+    Choose $\delta=\frac{\epsilon}{3}$. Then, $0<|x-2|<\delta$ implies $|(3x+4)-10|<\epsilon$.
+    \part Let $\epsilon>0$. We want $\delta$ such that $0<|x|<\delta$ implies $|x^3-0|<\epsilon$.
+    \[|x^3|<\epsilon\]
+    \[|x|^3<\epsilon\]
+    \[|x|<\sqrt[3]{\epsilon}\]
+    Choose $\delta=\sqrt[3]{\epsilon}$. Then, $0<|x|<\delta$ implies $|x^3-0|<\epsilon$.
+    \part Let $\epsilon>0$. We want $\delta$ such that $0<|x-2|<\delta$ implies $|(x^2+x-1)-5|<\epsilon$.
+    \[|x^2+x-6|<\epsilon\]
+    \[|x+3||x-2|<\epsilon\]
+    \[|x-2|<\frac{\epsilon}{|x+3|}\]
+    We can agree that $V_\delta(2)$ must have radius no bigger than $\delta=1$. Then, we have an upper bound on $|x+3|$. So, $|x+3|<|3+3|=6$ for $x\in V_\delta(2)$. Choose $\delta=\min\{1,\frac{\epsilon}{6}\}$. Then, if $0<|x-2|<\delta$, it follows that $|(x^2+x-1)-5|=|x+3||x-2|<6(\frac{\epsilon}{6})=\epsilon$.
+    \part Let $\epsilon>0$. We want $\delta$ such that $0<|x-3|<\delta$ implies $|\frac{1}{x}-\frac{1}{3}|<\epsilon$.
+    \[|\frac{3}{3x}-\frac{x}{3x}|<\epsilon\]
+    \[\frac{|3-x|}{|3x|}<\epsilon\]
+    \[|x-3|<\epsilon|3x|\]
+    We can agree that $V_\delta(3)$ must have radius no bigger than $\delta=1$. Then, we have a lower bound on $|3x|$. So, $|3x|>|3(2)|=6$ for $x\in V_\delta(3)$. Choose $\delta=\min\{1,6\epsilon\}$. Then, if $0<|x-3|<\delta$, it follows that $|\frac{1}{x}-\frac{1}{3}|=\frac{|3-x|}{|3x|}<\frac{6\epsilon}{6}=\epsilon$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.2.7}
+\newline
+\newline
+Let $\epsilon>0$. To show that $\lim_{x\to c}g(x)f(x)=0$, we want to find $\delta$ such that $0<|x-c|<\delta$ implies $|g(x)f(x)|<\epsilon$. Because $\lim_{x\to c}g(x)=0$, for $M>0$, there exists a $\delta$ such that $0<|x-c|<\delta$ implies $|g(x)|<\frac{\epsilon}{M}$. So, $|g(x)f(x)|=|g(x)||f(x)|<\frac{\epsilon}{M}|f(x)|\le\frac{\epsilon}{M}M=\epsilon$. Therefore, $\lim_{x\to c}g(x)f(x)=0$.
+\newline
+
+\underline{Exercise 4.2.8}
+\newline
+\begin{parts}
+    \part Let $x_n=2-\frac{1}{n}$ and $y_n=2+\frac{1}{n}$. $\lim x_n=\lim y_n=2$, but $\lim f(x_n)\ne\lim f(y_n)$. To prove this, we can find $\lim f(x_n)$ and $\lim f(y_n)$. For each $x_n$, $f(x_n)=\frac{|x_n-2|}{x_n-2}=\frac{2-x_n}{x_n-2}=-1$. For each $y_n$, $f(y_n)=\frac{|y_n-2|}{y_n-2}=\frac{y_n-2}{y_n-2}=1$. So, the limit does not exist by the Divergence Criterion for Functional Limits.
+    \part By the Sequential Criterion for Functional Limits, we want to show that for all sequences $(x_n)\in \mathbb{R}\setminus\{2\}$ with $x_n\ne \frac{7}{4}$ and $(x_n)\to\frac{7}{4}$, it follows that $f(x_n)\to-1$. Let $(x_n)$ be any such sequence. To show that $f(x_n)\to-1$, we want that for each $\epsilon>0$, there exists a $N\in \mathbb{N}$ such that for all $n>N$, $|f(x_n)-(-1)|<\epsilon$. Let $\epsilon>0$. Then, we want $|\frac{|x_n-2|}{x_n-2}+1|<\epsilon$.
+    \newline
+    \newline
+    Since $(x_n)\to\frac{7}{4}$, we know that for each $\epsilon>0$, there exists a $N\in \mathbb{N}$ such that for all $n>N$, $|x_n-\frac{7}{4}|<\epsilon$. Choose $\epsilon_0=\frac{1}{4}$ and let the corresponding $N$ be $N_0$. Then, for $n>N_0$, $|x_n-\frac{7}{4}|<\frac{1}{4}$. This implies $-\frac{1}{4}<x_n-\frac{7}{4}<\frac{1}{4}\implies\frac{3}{2}<x_n<2$. For $x_n\in(\frac{3}{2},2)$, $x_n-2<0$, so $|x_n-2|=2-x_n$. Then, $|\frac{|x_n-2|}{x_n-2}+1|=|\frac{2-x_n}{x_n-2}+1|=|-1+1|=0<\epsilon$ for all $\epsilon>0$. Therefore, $f(x_n)\to-1$ and $\lim_{x\to\frac{7}{4}}\frac{|x-2|}{x-2}=-1$.
+    \part Let $x_n=\frac{1}{2n}$ and $y_n=\frac{1}{2n+1}$. $\lim x_n=\lim y_n=0$, but $\lim f(x_n)\ne\lim f(y_n)$. To prove this, we can find $\lim f(x_n)$ and $\lim f(y_n)$. $\lim f(x_n)=\lim(-1)^{\lfloor2n\rfloor}$. Since $2n$ is an even integer, $\lim f(x_n)=\lim(-1)^{2n}=1$. $\lim f(y_n)=\lim(-1)^{\lfloor2n+1\rfloor}$. Since $2n+1$ is an odd integer, $\lim f(y_n)=\lim(-1)^{2n+1}=-1$. So, the limit does not exist by the Divergence Criterion for Functional Limits.
+    \part By the Sequential Criterion for Functional Limits, we want to show that for all sequences $(x_n)\in \mathbb{R}\setminus\{0\}$ with $x_n\ne0$ and $(x_n)\to0$, it follows that $f(x_n)\to0$. Let $(x_n)$ be any such sequence.
+    \newline
+    \newline
+    Since we want to prove that $f(x_n)\to0$, for each $\epsilon>0$, we want to find a $N\in \mathbb{N}$ such that for $n>N$, $|f(x_n)-0|=|\sqrt[3]{x_n}(-1)^{\lfloor\frac{1}{x_n}\rfloor}|<\epsilon$. Since $(x_n)\to0$, we know that for $\epsilon^3$, there exists a $N_0\in \mathbb{N}$ such that for all $n>N_0$, $|x_n-0|<\epsilon^3$. Then, $|\sqrt[3]{x_n}(-1)^{\lfloor\frac{1}{x_n}\rfloor}|=|\sqrt[3]{x_n}||(-1)^{\lfloor\frac{1}{x_n}\rfloor}|<|\sqrt[3]{\epsilon^3}||1|=\epsilon$, since $(-1)^{\lfloor\frac{1}{x_n}\rfloor}$ is equal to 1 or $-1$. Therefore, for any $\epsilon>0$, we can choose the corresponding $N_0$ such that for $n>N_0$, $|f(x_n)-0|=|\sqrt[3]{x_n}(-1)^{\lfloor\frac{1}{x_n}\rfloor}|<\epsilon$. So, $\lim_{x\to0}\sqrt[3]{x}(-1)^{\lfloor\frac{1}{x}\rfloor}=0$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.2.9}
+\newline
+\begin{parts}
+    \part Let $M>0$. Choose $\delta=\frac{1}{2\sqrt{M}}$. Then, $0<|x-0|<\delta$ implies $f(x)>M$. Since $\delta=\frac{1}{2\sqrt{M}}$, $0<|x-0|<\delta\implies|x|<\frac{1}{2\sqrt{M}}$. Then, $|x|^2=x^2<\frac{1}{4M}\implies\frac{1}{x^2}>4M>M$. Therefore, $\lim_{x\to0}\frac{1}{x^2}=\infty$.
+    \part A definition for $\lim_{x\to\infty}f(x)=L$ would be the following: For all $\epsilon>0$, there exists an $x_0$ such that $x>x_0$ implies $|f(x)-L|<\epsilon$.
+    \newline
+    \newline
+    Now, we are going to show that $\lim_{x\to\infty}\frac{1}{x}=0$. Let $\epsilon>0$. Choose $x_0=\frac{2}{\epsilon}$. Let $x>x_0$. $\epsilon>0$, so $x_0$ and $x$ are positive. $|f(x)-0|=|\frac{1}{x}|<\frac{1}{\frac{2}{\epsilon}}=\frac{\epsilon}{2}<\epsilon$.  So, $\lim_{x\to\infty}\frac{1}{x}=0$.
+    \part A definition for $\lim_{x\to\infty}f(x)=\infty$ would be the following: For all $M>0$, there exists an $x_0$ such that $x>x_0$ implies $f(x)>M$.
+    \newline
+    \newline
+    An example of such a limit would be $\lim_{x\to\infty}x=\infty$. Let $M>0$ and $x_0=2M$. Then, for $x>x_0$, $f(x)=x>2M>M$. So, $\lim_{x\to\infty}x=\infty$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.2.10}
+\newline
+\begin{parts}
+    \part $\lim_{x\to a^+}f(x)=L$ if, for all $\epsilon>0$, there exists $\delta$ such that $0<x-a<\delta$ implies $|f(x)-L|<\epsilon$. $\lim_{x\to a^-}f(x)=M$ if, for all $\epsilon>0$, there exists $\delta$ such that $0<a-x<\delta$ implies $|f(x)-M|<\epsilon$.
+    \part First, we will prove the forward direction. Assume $\lim_{x\to a}f(x)=L$. We want to prove that $\lim_{x\to a^+}f(x)=L$ and $\lim_{x\to a^-}f(x)=L$. We know that for all $\epsilon>0$, there exists a $\delta$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$. $0<|x-a|<\delta\implies-\delta<x-a<\delta$. Splitting this inequality into two, we have $-\delta<x-a$ and $x-a<\delta$. The first inequality can be rearranged to say $a-x<\delta$. Now, we have that for all $\epsilon>0$, there exists a $\delta$ such that $a-x<\delta$ implies $|f(x)-L|<\epsilon$. This means that $\lim_{x\to a^-}f(x)=L$. The second inequality says that for each $\epsilon>0$, there exists a $\delta$ such that $x-a<\delta$ implies $|f(x)-L|<\epsilon$. This means that $\lim_{x\to a^+}f(x)=L$. Therefore, the forward direction is proved.
+    \newline
+    \newline
+    Now, we will show the backward direction. Assume $\lim_{x\to a^+}f(x)=L$ and $\lim_{x\to a^-}f(x)=L$. We want to prove that $\lim_{x\to a}f(x)=L$. From the assumptions, we have two statements. For each $\epsilon>0$, there exists a $\delta_1$ such that $0<x-a<\delta_1$ implies $|f(x)-L|<\epsilon$. Also, for each $\epsilon>0$, there exists a $\delta_2$ such that $0<a-x<\delta_2$ implies $|f(x)-L|<\epsilon$. Choose $\delta=\min\{\delta_1,\delta_2\}$. Then, for each $\epsilon>0$, $0<x-a<\delta$ implies $|f(x)-L|<\epsilon$ and $0<a-x<\delta$ implies $|f(x)-L|<\epsilon$. Combining the two inequalities, for each $\epsilon>0$, $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$. Since we can always choose such a $\delta$, the backward direction is proved. So, $\lim{x\to a}f(x)=L$ if and only if both the right and left-hand limits equal $L$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.3.1}
+\newline
+\begin{parts}
+    \part Let $\epsilon>0$. Choose $\delta=\epsilon^3$. Then, $|x-0|<\delta\implies|x|<\epsilon^3\implies\sqrt[3]{|x|}=|\sqrt[3]{x}|<\epsilon$. Therefore, $g$ is continuous at $c=0$.
+    \part Let $\epsilon>0$ and $c\ne0$. First, assume $\delta\le\frac{|c|}{2}$. This ensures that $\sqrt[3]{x}\sqrt[3]{c}$ is positive, as $x$ and $c$ are the same sign. Choose $\delta=\min\{|c|,\epsilon\sqrt[3]{c^2}\}$. Then, $|x-c|<\delta\implies|(\sqrt[3]{x}-\sqrt[3]{c})(\sqrt[3]{x^2}+\sqrt[3]{x}\sqrt[3]{c}+\sqrt[3]{c^2})|<\delta\implies|\sqrt[3]{x}-\sqrt[3]{c}|<\frac{\delta}{\sqrt[3]{x^2}+\sqrt[3]{x}\sqrt[3]{c}+\sqrt[3]{c^2}}\le\frac{\delta}{\sqrt[3]{c^2}}=\frac{\epsilon\sqrt[3]{c^2}}{\sqrt[3]{c^2}}=\epsilon$. Therefore, $g$ is continuous at $c\ne0$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.3.4}
+\newline
+\begin{parts}
+    \part Let $f(x)=0$ for $x\in \mathbb{R}$ and $g(x)=1$ for $x\ne0$ and $g(x)=0$ for $x=0$. Then, $\lim_{x\to0}f(x)=0$ and $\lim_{x\to0}g(x)=1$. However, $\lim_{x\to0}g(f(x))=0$. This is because for all $x\ne0$, $f(x)$ evaluates to 0 in $g(f(x))$. This causes $g(f(x))=g(0)$ for $x\ne0$. Then, the limit evaluates to 0, which is not equal to $\lim_{x\to0}g(x)=1$.
+    \part Since $g$ is continuous at $q$, for all $\epsilon>0$, there exists a $\delta_0>0$ such that $|y-q|<\delta_0$ implies $|g(y)-r|<\epsilon$. Since $f$ is continuous at $p$, there exists a $\delta_1>0$ such that $|x-p|<\delta_1$ implies $|f(x)-q|<\delta_0$. We want to show that $\lim_{x\to p}g(f(x))=r$. This is equivalent to showing that for all $\epsilon>0$, there exists a $\delta>0$ such that $|x-p|<\delta$ implies $|g(f(x))-r|<\epsilon$. We can assume that $|x-p|<\delta$ and try to prove $g(f(x))<\epsilon$. Let $\delta=\delta_0$. This implies that $|f(x)-q|<\delta_1$. Let $y=f(x)$. Then, we have $|y-q|<\delta_1$. This implies that $|g(y)-r|<\epsilon$. This is equivalent to $|g(f(x))-r|<\epsilon$. Therefore, by the definition of a functional limit, $\lim_{x\to p}g(f(x))=r$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.3.9}
+\newline
+\newline
+Assume that $K$ is not a closed set. That means that there exists an $a$ that is a limit point of $K$ such that $a\notin K$. So, there exists some sequence $(a_n)$ contained in $K$ such that $(a_n)\to a\notin K$. Since $K$ consists of elements $x$ such that $h(x)=0$, $h(a)\ne0$. By the Criterion for Discontinuity, $h(x)$ is not continuous at $a$. However, this is a contradiction, since it is given that $h(x)$ is continuous. Therefore, $K$ must be a closed set.
+
+\end{document}
