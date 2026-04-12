@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 APR 2026 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 APR 2026 16:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/350 HW/HW8/HW8.tex"
-(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/350 HW/HW8/HW8.tex
+**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/350 HW/HW9/HW9.tex"
+(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/350 HW/HW9/HW9.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
@@ -181,8 +181,45 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count324
 \l__pdf_internal_box=\box55
-) (./HW8.aux)
-\openout1 = `HW8.aux'.
+) (./HW9.aux
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@3' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@3' multiply defined.
+
+)
+\openout1 = `HW9.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -206,27 +243,37 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 16--19
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--19
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+Underfull \hbox (badness 10000) in paragraph at lines 56--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
@@ -235,134 +282,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--86
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--168
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--210
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 
  []
 
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--284
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--284
+Underfull \hbox (badness 10000) in paragraph at lines 276--280
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 285--301
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--368
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--368
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 369--373
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
-
- []
-
-
-
-[5]
-This exam contains 0 questions with 2 parts, 0 subparts, and 0 subsubparts.
-(./HW8.aux)
+This exam contains 0 questions with 15 parts, 0 subparts, and 0 subsubparts.
+(./HW9.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 2831 strings out of 473190
- 40470 string characters out of 5715801
- 459320 words of memory out of 5000000
- 26121 multiletter control sequences out of 15000+600000
+ 2844 strings out of 473190
+ 40699 string characters out of 5715801
+ 461320 words of memory out of 5000000
+ 26134 multiletter control sequences out of 15000+600000
  560536 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,11n,65p,975b,206s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HW8.pdf (5 pages, 111506 bytes).
+ 56i,11n,65p,912b,281s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW9.pdf (4 pages, 94204 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 57 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
