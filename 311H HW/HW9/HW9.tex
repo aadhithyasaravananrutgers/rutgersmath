@@ -1,0 +1,167 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 9}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 9}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 4.3.11}
+\newline
+\begin{parts}
+    \part Choose $z\in \mathbb{R}$ arbitrarily. We want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-z|<\delta$ implies $|f(x)-f(z)|<\epsilon$. Choose $\delta=\epsilon$. Then, $|x-z|<\delta\implies|x-z|<\epsilon$. Since $0<c<1$, we know that $|f(x)-f(z)|\le c|x-z|<|x-z|<\epsilon$. So, $f$ is continuous at $z$. Since $z$ was chosen arbitrarily from $\mathbb{R}$, $f$ is continuous on $\mathbb{R}$.
+    \part For a sequence $(y_n)$ to be Cauchy, for each $\epsilon>0$, there must exist a $N\in \mathbb{N}$ such that $m>n\ge N$ implies $|y_m-y_n|<\epsilon$. We know that $|y_3-y_2|\le c|y_2-y_1|$. Also, $|y_4-y_3|\le c|y_3-y_2|\le c^2|y_2-y_1|$. In general, $|y_{n+1}-y_n|\le c^{n-1}|y_2-y_1|$. For any $m>n$,
+    \[|y_m-y_n|\]
+    \[=|(y_m-y_{m-1})+(y_{m-1}-y_n)|\]
+    \[=|(y_m-y_{m-1})+(y_{m-1}-y_{m-2})+(y_{m-2}-y_n)|\]
+    \[=|(y_m-y_{m-1})+(y_{m-1}-y_{m-2})+\dots+(y_{n+1}-y_n)|\]
+    \[\le|y_m-y_{m-1}|+|y_{m-1}-y_{m-2}|+\dots+|y_{n+1}-y_n|\] by the triangle inequality. Then,
+    \[=c^{m-n-1}|y_{n+1}-y_n|+c^{m-n-2}|y_{n+1}-y_n|+\dots+|y_{n+1}-y_n|\]
+    \[=|y_{n+1}-y_n|(c^{m-n-1}+c^{m-n-2}+\dots+1)\]
+    \[=|y_2-y_1|c^{n-1}(c^{m-n-1}+c^{m-n-2}+\dots+1)\]
+    \[=|y_2-y_1|c^{n-1}\sum_{i=0}^{m-n-1}c^i\]
+    \[\le|y_2-y_1|c^{n-1}\sum_{i=0}^{\infty}c^i\]
+    \[=|y_2-y_1|\frac{c^{n-1}}{1-c}\]
+    As $n\to\infty$, $c^{n-1}\to0$, as $0<c<1$. Let $\epsilon>0$. Since $\lim_{n\to\infty}|y_2-y_1|\frac{c^{n-1}}{1-c}=0$, we can choose $N$ such that $n\ge N$ implies $|y_2-y_1|\frac{c^{n-1}}{1-c}<\epsilon$. We can pick an $N$ large enough such that for $m>n\ge N$, $|y_m-y_n|<\epsilon$. Therefore, $(y_n)$ is Cauchy.
+    \part $y=\lim y_n$. We want to show that $f(y)=y$ and $y$ is unique in this regard. $y=\lim y_n$, so $f(y)=f(\lim y_n)$. By the Sequential Criterion for Functional Limits, since $f$ is continuous, as proven in the first part of the exercise, $f(\lim y_n)=\lim f(y_n)=\lim y_{n+1}=y$. So, $f(y)=y$. To prove that $y$ is unique, assume there exists another fixed point $x\ne y$ of $f$. Then, $f(y)=y$. $|f(y)-f(x)|\le c|y-x|$. Substituting $f(y)=y$ and $f(x)=x$, $|y-x|\le c|y-x|$. Since $y\ne x$, $|y-x|\ne0$, so $1\le c$. However, $0<c<1$, so this is a contradiction. Therefore, there are no other fixed points of $f$, so $y$ is the unique fixed point.
+    \part If $x_1$ is an arbitrary point in $\mathbb{R}$, $(x_1,f(x_1),f(f(x_1)),\dots)=(x_1,x_2,x_3,\dots)$ converges to $y$. First, we have proven in the second part of the exercise that a general sequence $(y_1,f(y_1),f(f(y_1)),\dots)$ is Cauchy. Therefore, $(x_1,x_2,x_3,\dots)$ is Cauchy. By the Cauchy Criterion,  $(x_1,x_2,x_3,\dots)$ must have a limit $L$. Then, $\lim x_n=L$. In the third part of the exercise, we have proved that the limit of this sequence must be a fixed point of $f$. So, $f(L)=L$. However, $f$ has a unique fixed point, as proved in the third part of the exercise. So, $L=y$, and $(x_1,f(x_1),f(f(x_1)),\dots)$ converges to $y$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.3.12}
+\newline
+\newline
+For $g$ to be continuous, we want to show that for all $c\in \mathbb{R}$, for all $\epsilon>0$, there exists a $\delta$ such that $|x-c|<\delta$ implies $|g(x)-g(c)|<\epsilon$. We want to show that $|g(x)-g(c)|<\epsilon$, which is the same as showing $g(x)-g(c)<\epsilon$ and $-\epsilon<g(x)-g(c)$. We will choose $\delta=\epsilon$, so we assume that $|x-c|<\epsilon$.
+\newline
+\newline
+First, we will show that $g(x)-g(c)<\epsilon$. $g(c)=\inf\{|c-a|\mid a\in F\}$. By the definition of the infimum, there exists an $a_1\in F$ such that $g(c)+\alpha>|c-a_1|$ for any $\alpha>0$. Let $\alpha=\epsilon-|x-c|>\epsilon-\epsilon=0$. We know $g(x)\le |x-a_1|$, as $g(x)=\inf\{|x-a|\mid a\in F\}$. So,
+\[g(x)\]
+\[\le |x-a_1|\]
+\[\le |x-c|+|c-a_1|\]
+\[<|x-c|+g(c)+\alpha\]
+\[=|x-c|+g(c)+\epsilon-|x-c|\]
+\[=g(c)+\epsilon\]
+So, $g(x)-g(c)<\epsilon$.
+\newline
+\newline
+Now, we will show that $-\epsilon<g(x)-g(c)$. $g(x)=\inf\{|x-a|\mid a\in F\}$. By the definition of the infimum, there exists an $a_2\in F$ such that $g(x)+\beta>|x-a_2|$ for any $\beta>0$. Let $\beta=\epsilon-|x-c|>\epsilon-\epsilon>0$. We know $g(c)\le|c-a_2|$, as $g(c)=\inf\{|c-a|\mid a\in F\}$. So,
+\[g(c)\]
+\[\le |c-a_2|\]
+\[\le |c-x|+|x-a_2|\]
+\[<|c-x|+g(x)+\beta\]
+\[=|c-x|+g(x)+\epsilon-|x-c|\]
+\[=g(x)+\epsilon\]
+So, $-\epsilon<g(x)-g(c)$. Therefore, we have shown for an arbitrary $c\in \mathbb{R}$, for all $\epsilon>0$, there exists a $\delta$ such that $|x-c|<\delta$ implies $|g(x)-g(c)|<\epsilon$. So $g$ is continuous on $\mathbb{R}$.
+\newline
+\newline
+Now, we will show that $g(x)\ne0$ for all $x\notin F$. Assume $x\notin F$. Since $F$ is closed, $F^c$ is open, and $x\in F^c$. That means, there exists an $\epsilon>0$ for which $V_\epsilon(x)=(x-\epsilon,x+\epsilon)$ is contained in $F^c$. Then, since $g(x)=\inf\{|x-a|\mid a\in F\}$, $g(x)$ represents the minimum distance from a point of $F$ to $x$. Since $(x-\epsilon,x+\epsilon)$ has only points in $F^c$, there is at least $\epsilon$ distance between $x$ and any point in $F$. So, $g(x)\ge\epsilon>0$. Therefore, $g(x)\ne0$.
+\newline
+
+\underline{Exercise 4.4.1}
+\newline
+\begin{parts}
+    \part Choose $c$ arbitrarily from $\mathbb{R}$. We want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-c|<\delta$ implies $|f(x)-f(c)|<\epsilon$. First, assume $x$ is within a distance of 1 from $c$. So, $|x-c|<1$, so $|x|<|c|+1$. Then, we want $|x^3-c^3|<\epsilon\iff|x-c|<\frac{\epsilon}{|x^2+cx+c^2|}$. We want to bound $|x^2+cx+c^2|$. Substituting $|x|<|c|+1$, $|x^2+cx+c^2|\le|x^2|+|c||x|+|c|^2<|(|c|+1)|^2+|c|(|c|+1)+|c|^2=3|c|^2+3|c|+1$. For a given $\epsilon$, choose $\delta=\min\{1,\frac{\epsilon}{3|c|^2+3|c|+1}\}$. Then, we have
+    \[|x-c|<\delta\]
+    \[|x-c||x^2+cx+c^2|<\delta|x^2+cx+c^2|\]
+    \[|x^3-c^3|<\frac{\epsilon}{3|c|^2+3|c|+1}|x^2+cx+c^2|\]
+    \[|x^3-c^3|<\epsilon\]
+    So, since $c$ was chosen arbitrarily, this holds for all $c\in \mathbb{R}$. Therefore, $f(x)=x^3$ is continuous on $\mathbb{R}$.
+    \part By the Sequential Criterion for Absence of Uniform Continuity, $f(x)=x^3$ is not uniformly continuous on $\mathbb{R}$ if there exists $\epsilon_0>0$ and $(x_n)$ and $(y_n)$ such that $|x_n-y_n|\to0$, but $|f(x_n)-f(y_n)|\ge e_0$. Let $x_n=n+\frac{1}{n}$ and $y_n=n$. Then, $|x_n-y_n|=|n+\frac{1}{n}-n|=|\frac{1}{n}|\to0$. However, $|f(x_n)-f(y_n)|=|(n+\frac{1}{n})^3-n^3|=|3n+\frac{3}{n}+\frac{1}{n^3}|\ge3n$. Let $\epsilon_0=1$. Then, for all $n\ge1$, the inequality is satisfied. Therefore, $f(x)$ is not uniformly continuous.
+    \part Let $A$ be a bounded subset of $\mathbb{R}$. To show that $f$ is uniformly continuous on $A$, we want to show that for all $\epsilon>0$, there exists a $\delta$ such that for all $x,y\in A$, $|x-y|<\delta$ implies $|f(x)-f(y)|<\epsilon$. Let $\epsilon>0$. Since $A$ is bounded, $|x|\le K$ for some $K>0$. $|x-y|<\delta\iff|x-y||x^2+xy+y^2|<\delta|x^2+xy+y^2|\le\delta(|x|^2+|x||y|+|y|^2|)\le\delta(K^2+(K)(K)+K^2)=\delta(3K^2)$. Choose $\delta=\frac{\epsilon}{3K^2}$. Then, $|f(x)-f(y)|=|x^3-y^3|=|x-y||x^2+xy+y^2|<\frac{\epsilon}{3K^2}|x^2+xy+y^2|\le\epsilon$. Therefore, $f$ is uniformly continuous on $A$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.4.2}
+\newline
+\begin{parts}
+    \part By the Sequential Criterion for Absence of Uniform Continuity, $f(x)=\frac{1}{x}$ is not uniformly continuous on $(0,1)$ if there exists $\epsilon_0>0$ and $(x_n)$ and $(y_n)$ such that $|x_n-y_n|\to0$, but $|f(x_n)-f(y_n)|\ge\epsilon_0$. Let $x_n=\frac{3}{n}$ and $y_n=\frac{2}{n}$. Then, $|x_n-y_n|=|\frac{3}{n}-\frac{2}{n}|=|\frac{1}{n}|\to0$. However, $|f(x_n)-f(y_n)|=|\frac{n}{3}-\frac{n}{2}|=\frac{n}{6}$. Let $\epsilon_0=\frac{1}{6}$. Then, for all $n\ge1$, the inequality is satisfied. Therefore, $f(x)$ is not uniformly continuous on $(0,1)$.
+    \part To show that $g$ is uniformly continuous on $(0,1)$, we want to show that for all $\epsilon>0$, there exists a $\delta$ such that for all $x,y\in(0,1)$, $|x-y|<\delta$ implies $|g(x)-g(y)|<\epsilon$. Without loss of generality, assume $x>y$. Let $\epsilon>0$. We want to show that $|\sqrt{x^2+1}-\sqrt{y^2+1}|<\epsilon$, given $|x-y|<\delta$. Since $x>y$, $x-y<\delta$. Since $x,y\in(0,1)$, $x+y<2$. Also, $g(a)=\sqrt{a^2+1}<\sqrt3$ for $a\in(0,1)$. Then, we want
+    \[|\sqrt{x^2+1}-\sqrt{y^2+1}|<\epsilon\]
+    \[\sqrt{x^2+1}-\sqrt{y^2+1}<\epsilon\]
+    \[(\sqrt{x^2+1}-\sqrt{y^2+1})(\sqrt{x^2+1}+\sqrt{y^2+1})<\epsilon(\sqrt{x^2+1}+\sqrt{y^2+1})\]
+    \[x^2-y^2<\epsilon(\sqrt{3}+\sqrt{3})\]
+    \[(x-y)(x+y)<\epsilon(2\sqrt{3})\]
+    \[(x-y)(2)<\epsilon(2\sqrt{3})\]
+    \[(x-y)<\epsilon\sqrt{3}\]
+    \[\delta<\epsilon\sqrt{3}\]
+    So, let $\delta=\epsilon$. This satisfies the equation for all $x,y\in(0,1)$, as $\epsilon<\epsilon\sqrt{3}$, so $g$ is uniformly continuous on $(0,1)$.
+    \part Let $\tilde{h}(x)=0$ for $x=0$ and $\tilde{h}(x)=x\sin(\frac{1}{x})$ for $x\in(0,1]$. Then, $h(x)=\tilde{h}(x)$ for $x\in(0,1]$. Since $\tilde{h}$ is a product of continuous functions on $(0,1]$, it is continuous on $(0,1]$. To show continuity at $x=0$, we want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-0|<\delta$ implies $|\tilde{h}(x)-\tilde{h}(0)|<\epsilon$. Let $\epsilon>0$. Assume $|x-0|<\delta$. We want to show that $|\tilde{h}(x)-\tilde{h}(0)|=|x\sin(\frac{1}{x})-0|<\epsilon$. Let $\delta=\epsilon$. Then, $|x|=x<\epsilon$. $|x\sin(\frac{1}{x})-0|=|x||\sin(\frac{1}{x})|\le|x||1|<\epsilon|1|=\epsilon$. So, $\tilde{h}$ is continuous at $x=0$, so $\tilde{h}$ is continuous on $[0,1]$. Then, since $[0,1]$ is compact, $\tilde{h}$ is uniformly continuous on $[0,1]$. Since $h(x)=\tilde{h}(x)$ for $x\in(0,1)$, $h$ is uniformly continuous on $(0,1)$, a subset of $[0,1]$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.4.3}
+\newline
+\newline
+First, we will show that $f(x)=\frac{1}{x^2}$ is uniformly continuous on $[1,\infty)$. We want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-y|<\delta$ implies $|\frac{1}{x^2}-\frac{1}{y^2}|<\epsilon$. Without loss of generality, assume $y>x$, so $y-x<\delta$. Let $\epsilon>0$ and $\delta=\frac{\epsilon}{2}$. So,
+\[\left|\frac{1}{x^2}-\frac{1}{y^2}\right|\]
+\[=\left|\frac{(y-x)(y+x)}{x^2y^2}\right|\]
+\[=|y-x|\left|\frac{y}{x^2y^2}+\frac{x}{x^2y^2}\right|\]
+\[<\frac{\epsilon}{2}\left|\frac{1}{x^2y}+\frac{1}{xy^2}\right|\]
+\[\le\frac{\epsilon}{2}|1+1|\]
+\[=\epsilon\]
+Therefore, $f(x)=\frac{1}{x^2}$ is uniformly continuous on $[1,\infty)$.
+\newline
+\newline
+Now, we will show that $f(x)=\frac{1}{x^2}$ is not uniformly continuous on $(0,1]$. We want to show that there exist two sequences $(x_n),(y_n)\in(0,1]$ and an $\epsilon_0$ such that $|x_n-y_n|\to0$ but $|f(x_n)-f(y_n)|\ge\epsilon_0$. Let $x_n=\frac{1}{n}$, $y_n=\frac{1}{2n}$, and $\epsilon_0=1$. $|x_n-y_n|=|\frac{1}{n}-\frac{1}{2n}|=|\frac{2-1}{2n}|=|\frac{1}{2n}|\to0$. However, $|f(x_n)-f(y_n)|=|n^2-(2n)^2|=3n^2\ge1$ for $n>1$. So, $f(x)=\frac{1}{x^2}$ is not uniformly continuous on $(0,1]$.
+\newline
+
+\underline{Exercise 4.4.7}
+\newline
+\newline
+We want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-y|<\delta$ implies $|\sqrt{x}-\sqrt{y}|<\epsilon$. Recall that for any $a>b$, $\sqrt{a}-\sqrt{b}\le\sqrt{a-b}$. Without loss of generality, assume $x>y$. Let $\epsilon>0$ and $\delta=\epsilon^2$. Then,
+\[|\sqrt{x}-\sqrt{y}|\]
+\[\le\sqrt{x-y}\]
+\[<\sqrt{\delta}\]
+\[=\sqrt{\epsilon^2}\]
+\[=\epsilon\]
+Therefore, $f(x)=\sqrt{x}$ is uniformly continuous on $[0,\infty)$.
+\newline
+
+\underline{Exercise 4.4.9}
+\newline
+\begin{parts}
+    \part Assume $f$ is Lipschitz on $A$. We want to show that $f$ is uniformly continuous on $A$. We know that there exists an $M>0$ such that $\left|\frac{f(x)-f(y)}{x-y}\right|\le M$. Rearranging this, we have $|f(x)-f(y)|\le|x-y|M$. We want to show that for all $\epsilon>0$, there exists a $\delta$ such that $|x-y|<\delta$ implies $|f(x)-f(y)|<\epsilon$. Let $\epsilon>0$ and $\delta=\frac{\epsilon}{M}$. So,
+    \[|f(x)-f(y)|\]
+    \[\le|x-y|M\]
+    \[<\delta M\]
+    \[=\frac{\epsilon}{M}M\]
+    \[=\epsilon\]
+    So, $f$ is uniformly continuous on $A$.
+    \part Uniformly continuous functions are not necessarily Lipschitz. Let $f(x)=\sqrt{x}$. As shown in Exercise 4.4.7, $f$ is uniformly continuous on $[0,\infty)$. $f$ is not Lipschitz. We can show this by contradiction. Assume $f$ is Lipschitz. Then, there exists a $M$ such that $\left|\frac{f(x)-f(y)}{x-y}\right|\le M$. This is equivalent to $|\sqrt{x}-\sqrt{y}|\le M|x-y|$. Choose $x>0$ and $y=0$. Then, we have $|\sqrt{x}-0|\le M|x-0|\implies\sqrt{x}\le Mx$. Since $x>0$, we can divide both sides by $\sqrt{x}$, so we have $1\le M\sqrt{x}\implies\frac{1}{\sqrt{x}}\le M$. Since this must hold for $x>0$, we can choose $x$ to approach 0 from the right, and the limit of $\frac{1}{\sqrt{x}}$ is infinity, so there cannot exist such a real number $M$. This is a contradiction, so $f$ is not Lipschitz.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.4.12}
+\newline
+\begin{parts}
+    \part Let $f(x)=0$ for $x\in \mathbb{R}$ and $B={0}$. Then, $B$ is finite, but $f^{-1}(B)=\mathbb{R}$, which is not finite. Therefore, this is false.
+    \part Let $f(x)=0$ for $x\in \mathbb{R}$ and $K={0}$. Then, $K$ is compact. This is because it has no limit points, and is therefore closed, and is bounded. But $f^{-1}(K)=\mathbb{R}$, which is not compact, as $\mathbb{R}$ is not bounded. Therefore, this is false.
+    \part Let $f(x)=0$ for $x\in \mathbb{R}$ and $A={0}$. Then, $A$ is bounded, but $f^{-1}(A)=\mathbb{R}$, which is not bounded. Therefore, this is false.
+    \part This is true. By Exercise 4.4.11, $f$ is continuous if and only if $f^{-1}(O)$ is open whenever $O\subseteq \mathbb{R}$ is an open set. Since we are given that $f$ is continuous, we know that for all open sets $O\subseteq \mathbb{R}$, $f^{-1}(O)$ is open. Let $F\subseteq \mathbb{R}$ be closed. Then $F^c$ is open by Theorem 3.2.13. Let $O=F^c$. Choose $x\in f^{-1}(F^c)$. Then, $f(x)\in F^c$, so $f(x)\notin F$. Then, $x\notin f^{-1}(F)$ and $x\in (f^{-1}(F))^c$. So, $f^{-1}(F^c)\subseteq(f^{-1}(F))^c$. Now choose $x\in(f^{-1}(F))^c$. Then, $x\notin f^{-1}(F)$, so $f(x)\notin F$. Then, $f(x)\in F^c$ and $x\in f^{-1}(F^c)$. So, $(f^{-1}(F))^c\subseteq f^{-1}(F^c)$. Since $f^{-1}(F^c)\subseteq(f^{-1}(F))^c$ and $(f^{-1}(F))^c\subseteq f^{-1}(F^c)$, $(f^{-1}(F))^c=f^{-1}(F^c)$. Since $O=F^c$ is open and $f$ is continuous, $f^{-1}(F^c)$ is open, so $(f^{-1}(F))^c$ is open, and thus $f^{-1}(F)$ is closed. Since $F$ was closed, we have that $f^{-1}(F)$ is closed whenever $F$ is closed. So, the statement is true.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.4.13}
+\newline
+\begin{parts}
+    \part To show that $f(x_n)$ is Cauchy, we want to show that for all $\epsilon>0$, there exists an $N\in \mathbb{N}$ such that $m,n\ge N$ implies $|f(x_n)-f(x_m)|<\epsilon$. Since $f$ is uniformly continuous, we know for each $\epsilon>0$, there exists a $\delta_0$ such that $|x-y|<\delta_0$ implies $|f(x)-f(y)|<\epsilon$. Let $\epsilon>0$. We know that $(x_n)$ is Cauchy, so we know that there exists an $N_0$ such that $m,n\ge N_0$ implies $|x_n-x_m|<\delta_0$. Let $N=N_0$. With this, we can show that $f(x_n)$ is Cauchy. Since $|x_n-x_m|<\delta_0$ for $m,n\ge N_0$, $|f(x_n)-f(x_m)|<\epsilon$ by $f$ being uniformly continuous. So, for all $\epsilon>0$, there exists an $N\in \mathbb{N}$ such that $m,n\ge N$ implies $|f(x_n)-f(x_m)|<\epsilon$. Therefore, $f(x_n)$ is Cauchy.
+    \part First, we will prove the forward direction. Assume $g$ is uniformly continuous on $(a,b)$. We want to show that it is possible to define values $g(a)$ and $g(b)$  such that $g$ is continuous on $[a,b]$. Choose a sequence $(x_n)\subseteq(a,b)$ such that $x_n\to a$. Then, $(x_n)$ is Cauchy, as it is convergent. So, by the previous part of the exercise, $g(x_n)$ is convergent, as $g$ is uniformly continuous on $(a,b)$. We must prove that this value is the same regardless of the choice of the sequence. Let $(x_n)\to a$ and $(y_n)\to a$ with $x_n,y_n\in(a,b)$. Then, $|x_n-y_n|\le|x_n-a|+|y_n-a|\to0$, by the definition of convergent sereies. Then, by the negation of Theorem 4.4.5, $|g(x_n)-g(y_n)|\to0$. But $g(x_n)\to L$ and $g(y_n)\to M$ for some $L,M\in \mathbb{R}$, by the previous part of the exercise, so $L=M$. Therefore, the value of the limit is unique. So, let $g(a)=\lim_{x\to a^+}g(x)$. In the same way, let $g(b)=\lim_{x\to b^-}g(x)$.
+    \newline
+    \newline
+    Let $\epsilon>0$. Since $g$ is uniformly continuous on $(a,b)$, there exists a $\delta>0$ such that for all $x,y\in(a,b)$, $|x-y|<\delta$ implies $|g(x)-g(y)|<\epsilon$. Assume $0<x-a<\delta$. Since $g(a)=\lim_{t\to a^+} g(t)$, there exists $t\in(a,b)$ such that $|t-a|<\delta-(x-a)$ and $|g(t)-g(a)|<\epsilon$. Then, $|x-t|\le|x-a|+|t-a|<\delta$, so $|g(x)-g(t)|<\epsilon$. Thus, $|g(x)-g(a)|\le|g(x)-g(t)|+|g(t)-g(a)|<\epsilon+\epsilon=2\epsilon$. So $g$ is continuous at $a$. Similarly, $g$ is continuous at $b$.
+    \newline
+    \newline
+    Assume $g$ can be extended to a function on $[a,b]$ that is continuous on $[a,b]$. Since $[a,b]$ is compact, by Theorem 4.4.7, $g$ is uniformly continuous on $[a,b]$. So for all $\epsilon>0$, there exists a $\delta>0$ such that for all $x,y\in[a,b]$, $|x-y|<\delta \implies |g(x)-g(y)|<\epsilon$. Since $(a,b)\subseteq[a,b]$, this holds for all $x,y\in(a,b)$. Therefore, $g$ is uniformly continuous on $(a,b)$.
+    \newline
+\end{parts}
+
+
+
+\end{document}
