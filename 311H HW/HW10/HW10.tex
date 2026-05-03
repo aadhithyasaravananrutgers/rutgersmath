@@ -1,0 +1,116 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 10}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 10}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 4.5.3}
+\newline
+\newline
+Let $c\in(a,b)$. We will show that $f$ is continuous at $c$. Since $f$ is increasing, for every $x<c$, we have $f(x)\le f(c)$. Let $L=\sup\{f(x):a\le x<c\}$. Then $L\le f(c)$. We claim that $L=f(c)$. Assume for contradiction that $L<f(c)$. Then choose some number $M$ such that $L<M<f(c)$. Since $f(a)\le L<M<f(c)$, by the intermediate value property, there exists some $y\in[a,c]$ such that $f(y)=M$. But $y\ne c$, since $f(c)\ne M$. So, $y<c$. Therefore, by the definition of $L$ as a supremum, we must have $f(y)\le L$. This contradicts $f(y)=M>L$. Thus, $L=f(c)$.
+\newline
+\newline
+Now, let $\epsilon>0$. Since $L=f(c)$ and $L=\sup\{f(x):a\le x<c\}$, there exists some $x_0\in[a,c)$ such that $f(c)-\epsilon<f(x_0)\le f(c)$. Then, for any $x\in(x_0,c)$, since $f$ is increasing, we have $f(c)-\epsilon<f(x_0)\le f(x)\le f(c)$. Thus, $|f(x)-f(c)|<\epsilon$. Therefore, $\lim_{x\to c^-}f(x)=f(c)$.
+\newline
+\newline
+Similarly, $\lim_{x\to c^+}f(x)=f(c)$. Therefore, by Theorem 4.6.3, $\lim_{x\to c}f(x)=f(c)$, so $f$ is continuous at $c$. Since $c\in(a,b)$ was arbitrary, $f$ is continuous on $(a,b)$.
+\newline
+\newline
+The endpoint cases follow similarly using one-sided limits. Therefore, $f$ is continuous on $[a,b]$.
+\newline
+
+\underline{Exercise 4.5.4}
+\newline
+\newline
+If $g$ is one-to-one on the interval $A$, then $F$ will contain no points, and is therefore empty. So, we focus on the case where $g$ is not one-to-one on the interval $A$. So, there exists $a$ and $b$ such that $a\ne b$ and $g(a)=g(b)$. Without loss of generality, let $a<b$. If $g$ is constant on $[a,b]$, then every point $x\in[a,b]$ is also in $F$. Since $[a,b]$ is an interval with $a\ne b$, it is uncountable, so $F$ is uncountable. Assume $g$ is not constant. Then, there exists $x_0,x_1\in[a,b]$ such that $g(x_0)\le g(x)\le g(x_1)$ for all $x\in[a,b]$, by the Extreme Value Theorem. Since $g$ is not constant and $g(a)=g(b)$, at least one of $x_0$ or $x_1$ is not at the endpoints, as both the minimum and maximum values cannot equal $g(a)$. Let $c\in(a,b)$ be a point where $g$ attains such a minimum or maximum.
+\newline
+\newline
+First, suppose $g(c)$ is a maximum and $g(a)<g(c)$. The case where $g(c)$ is a minimum is analogous, using the interval $(g(c),g(a))$. For each $L\in(g(a),g(c))$, choose one such point $x_L\in(a,c)$ with $g(x_L)=L$, by the Intermediate Value Theorem. Also, since $g(b)=g(a)<L<g(c)$, the Intermediate Value Theorem gives some $y_L\in(c,b)$ such that $g(y_L)=L$. $x_L<c<y_L\implies x_L\ne y_L$, so $x_L\in F$. If $L_1\ne L_2$, then $x_{L_1}\ne x_{L_2}$, since otherwise $L_1=g(x_{L_1})=g(x_{L_2})=L_2$, which is impossible. Thus the set $\{x_L\mid L\in(g(a),g(c))\}$ is in one-to-one correspondence with $(g(a),g(c))$, which is an uncountable open interval. Therefore, since $\{x_L\mid L\in(g(a),g(c))\}\subseteq F$, $F$ is uncountable.
+\newline
+
+\underline{Exercise 4.5.6}
+\newline
+\begin{parts}
+    \part We can use $f\left(\frac{1}{2}\right)$ to find a $x,y\in[0,1]$ satisfying the condition. If $f(\frac{1}{2})=f(0)$, we can use $x=0$ and $y=\frac{1}{2}$. If $f\left(\frac{1}{2}\right)\ne f(0)$, assume $f(\frac{1}{2})>f(0)=f(1)$ without loss of generality. The case $f(\frac{1}{2})<f(0)=f(1)$ is analogous. Define $g(x)=f\left(x+\frac{1}{2}\right)-f(x)$ for $x\in[0,\frac{1}{2}]$. $g$ is continuous, as it is the difference of two continuous functions. $g(0)=f\left(\frac{1}{2}\right)-f(0)>0$ and $g\left(\frac{1}{2}\right)=f(1)-f\left(\frac{1}{2}\right)<0$. By the Intermediate Value Theorem, there exists a $c\in\left(0,\frac{1}{2}\right)$ such that $g(c)=0$. Then, $0=g(c)=f\left(c+\frac{1}{2}\right)-f(c)\implies f(c)=f\left(c+\frac{1}{2}\right)$. Let $x=c$ and $y=c+\frac{1}{2}$. Therefore, there exists $x,y\in[0,1]$ satisfying $|x-y|=\left|c-c-\frac{1}{2}\right|=\frac{1}{2}$ and $f(x)=f(y)$.
+    \part Define $g(x)=f(x+\frac{1}{n})-f(x)$ for $x\in[0,\frac{n-1}{n}]$. $g$ is continuous, as it is the difference of two continuous functions. Also,
+    \[\sum_{k=0}^{n-1}g\left(\frac{k}{n}\right)\]
+    \[=\sum_{k=0}^{n-1}\left(f\left(\frac{k+1}{n}\right)-f\left(\frac{k}{n}\right)\right)\]
+    \[=\left(f\left(\frac{1}{n}\right)-f(0)\right)+\left(f\left(\frac{2}{n}\right)-f\left(\frac{1}{n}\right)\right)+\dots+\left(f\left(\frac{n-1}{n}\right)-f\left(\frac{n-2}{n}\right)\right)+\left(f(1)-f\left(\frac{n-1}{n}\right)\right)\]
+    \[=f(1)-f(0)\]
+    \[=0\]
+    There are two cases: at least one $g\left(\frac{k}{n}\right)=0$ for some $k=0,1,\dots,n-2,n-1$ or $g\left(\frac{k}{n}\right)\ne0$ for all $k=0,1,\dots,n-2,n-1$. In the first case, it is clear that $f\left(\frac{k+1}{n}\right)-f\left(\frac{k}{n}\right)=0$, so we can choose $x=\frac{k}{n}$ and $y=\frac{k+1}{n}$. Then, $x,y$ satisfy $|x-y|=\frac{1}{n}$ and $f(x)=f(y)$. In the other case, some terms of $g$ must be positive and others must be negative for the sum to be equal to zero. Then, $g$ is positive at one point and negative at another point in $\left[0,\frac{n-1}{n}\right]$. So, by the Intermediate Value Theorem, there exists some $c\in\left[0,\frac{n-1}{n}\right]$ such that $g(c)=0$. So, $g(c)=f\left(c+\frac{1}{n}\right)-f(c)=0$. Let $x=c$ and $y=c+\frac{1}{n}$. Therefore, there exists $x,y\in[0,1]$ satisfying $|x-y|=\left|c-c-\frac{1}{n}\right|=\frac{1}{n}$ and $f(x)=f(y)$.
+    \part Let
+    \[
+    f(x)=
+    \begin{cases}
+    -10x, & 0\le x\le \frac15,\\
+    15x-5, & \frac15\le x\le \frac25,\\
+    -10x+5, & \frac25\le x\le \frac35,\\
+    15x-10, & \frac35\le x\le \frac45,\\
+    -10x+10, & \frac45\le x\le 1.
+    \end{cases}
+    \]
+    Also, let $g(x)=f\left(x+\frac{2}{5}\right)-f(x)$ for $x\in[0,\frac{3}{5}]$. We are looking for $g(c)=0$ to satisfy $f\left(c+\frac{2}{5}\right)=f(c)$. Any two points $x,y\in[0,1]$ with $|x-y|=\frac{2}{5}$ can be relabeled as $c$ and $c+\frac{2}{5}$ for some $c\in[0,\frac{3}{5}]$. However, $g(x)=1$ for all $x\in[0,\frac{3}{5}]$. So, there does not exist such a $c$. Therefore, there does not exist $x,y\in[0,1]$ satisfying $|x-y|=\frac{2}{5}$ and $f(x)=f(y)$.
+    \newline
+\end{parts}
+
+\underline{Exercise 4.5.7}
+\newline
+\newline
+To show that $f(x)=x$ for some $x\in[0,1]$, we can show that $f(x)-x=0$ for some $x\in[0,1]$. Let $g(x)=f(x)-x$. $g(0)=f(0)-0=f(0)\ge0$ and $g(1)=f(1)-1\le0$, since the range of $f$ is contained in $[0,1]$. If $g(0)=f(0)=0$, we can choose $x=0$ and have $f(x)=x$. If $g(1)=f(1)-1=0$, then $f(1)=1$, so we can choose $x=1$ and have $f(x)=x$. In the case that neither of those is true, we have $g(0)>0$ and $g(1)<0$. Since $g$ is the difference of continuous functions, it is also continuous. Then, by the Intermediate Value Theorem, there exists a $c\in(0,1)$ such that $g(c)=0$. Then, $g(c)=f(c)-c=0$. So, $f(c)=c$. Therefore, we can choose $x=c$, and we have $f(x)=x$.
+\newline
+
+\underline{Exercise 4.6.4}
+\newline
+\newline
+First, we will prove the forward direction. Assume $\lim_{x\to a}f(x)=L$. We want to prove that $\lim_{x\to a^+}f(x)=L$ and $\lim_{x\to a^-}f(x)=L$. We know that for all $\epsilon>0$, there exists a $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$. If $0<x-a<\delta$, then $0<|x-a|<\delta$, so $|f(x)-L|<\epsilon$. Therefore, $\lim_{x\to a^+}f(x)=L$. Similarly, if $0<a-x<\delta$, then $0<|x-a|<\delta$, so $|f(x)-L|<\epsilon$. Therefore, $\lim_{x\to a^-}f(x)=L$.
+\newline
+\newline
+Now, we will show the backward direction. Assume $\lim_{x\to a^+}f(x)=L$ and $\lim_{x\to a^-}f(x)=L$. We want to prove that $\lim_{x\to a}f(x)=L$. From the assumptions, we have two statements. For each $\epsilon>0$, there exists a $\delta_1>0$ such that $0<x-a<\delta_1$ implies $|f(x)-L|<\epsilon$. Also, for each $\epsilon>0$, there exists a $\delta_2>0$ such that $0<a-x<\delta_2$ implies $|f(x)-L|<\epsilon$. Choose $\delta=\min\{\delta_1,\delta_2\}$. Then, for each $\epsilon>0$, $0<x-a<\delta$ implies $|f(x)-L|<\epsilon$ and $0<a-x<\delta$ implies $|f(x)-L|<\epsilon$. Combining the two inequalities, for each $\epsilon>0$, $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$. Since we can always choose such a $\delta$, the backward direction is proved. So, $\lim_{x\to a}f(x)=L$ if and only if both the right and left-hand limits equal $L$.
+\newline
+
+\underline{Exercise 4.6.5}
+\newline
+\newline
+Let $f$ be a monotone function with a discontinuity at $c$. We are going to prove that it must be a jump discontinuity. Assume that it is not a jump discontinuity. Since $f$ is monotone, the one-sided limits $\lim_{x\to c^-}f(x)$ and $\lim_{x\to c^+}f(x)$ exist. Since there is not a jump discontinuity at $c$, $\lim_{x\to c^+}f(x)=\lim_{x\to c^-}f(x)$. First suppose $f$ is monotone increasing. The monotone decreasing case is analogous. Let the left- and right-hand limits be equal to $L$. There are two cases: $f(c)=L$ or $f(c)\ne L$. If $f(c)=L$, then $f$ is continuous at $c$, which is a contradiction to the original assumption that $f$ has a discontinuity at $c$. For the case where $f(c)\ne L$, either $f(c)>L$ or $f(c)<L$. First suppose $f(c)>L$. The case $f(c)<L$ is analogous, using the left-hand limit. Choose $\epsilon=\frac{f(c)-L}{2}>0$. Since \(\lim_{x\to c^+}f(x)=L\), there exists \(\delta>0\) such that if $0<x-c<\delta$, then $|f(x)-L|<\epsilon$. So, $f(x)<L+\epsilon=\frac{f(c)+L}{2}<f(c)$. Since $x>c$, this contradicts the fact that $f$ is monotone increasing, so $c$ must be a jump discontinuity. The monotone decreasing case is analogous.
+\newline
+
+\underline{Exercise 4.6.7}
+\newline
+\begin{parts}
+    \part $\mathbb{R}$ is $F_\sigma$ because it can be written as the countable union of closed sets.
+    \[\mathbb{R}=\bigcup_{n=1}^{\infty}[-n,n]\]
+    \newline
+    \newline
+    $\mathbb{R}\setminus\{0\}$ is $F_\sigma$ because it can be written as the countable union of closed sets.
+    \[\mathbb{R}\setminus\{0\}=\bigcup_{n=1}^{\infty}\left(\left[-n,-\frac{1}{n}\right]\cup\left[\frac{1}{n},n\right]\right)\]
+    \newline
+    \newline
+    $\mathbb{Q}$ is $F_\sigma$ because it can be written as the countable union of closed sets.
+    \[\mathbb{Q}=\bigcup_{q\in\mathbb{Q}}\{q\}\]
+    Since there are a countable number of rational numbers and singleton sets are closed, $\mathbb{Q}$ is $F_\sigma$.
+    \part We want to show that $\mathbb{Z}^c$ is $F_\sigma$. By De Morgan's Laws, we can instead show that $\mathbb{Z}$ is $G_\delta$. So, we need to write $\mathbb{Z}$ as a countable intersection of open sets. Let
+    \[O_n=\bigcup_{k\in\mathbb{Z}}\left(k-\frac{1}{n},k+\frac{1}{n}\right)\]
+    Each $O_n$ is open because it is a union of open intervals. Also, each $O_n$ contains every integer, since for any $k\in\mathbb{Z}$, we have $k\in\left(k-\frac{1}{n},k+\frac{1}{n}\right)$. So,
+    \[\mathbb{Z}\subseteq \bigcap_{n=1}^{\infty}O_n\]
+    Now, let $x\notin\mathbb{Z}$. Let $z$ be a closest integer to $x$. Since $x\notin\mathbb{Z}$, we know $|x-z|>0$. So, there exists some $N\in\mathbb{N}$ such that $\frac{1}{N}<|x-z|$. Then for every $k\in\mathbb{Z}$, we have $|x-k|\ge |x-z|>\frac{1}{N}$. So, $x\notin O_N$, so $x\notin\bigcap_{n=1}^{\infty}O_n$. Thus, $\bigcap_{n=1}^{\infty}O_n\subseteq\mathbb{Z}$. Therefore,
+    \[\mathbb{Z}=\bigcap_{n=1}^{\infty}O_n\]
+    Since $\mathbb{Z}$ is a countable intersection of open sets, $\mathbb{Z}$ is a $G_\delta$ set. Therefore, by De Morgan's Laws, $\mathbb{Z}^c$ is $F_\sigma$.
+    \newline
+    \newline
+    We want to show that $(0,1]$ is $F_\sigma$. So, we need to write $(0,1]$ as a countable union of closed sets. Let $F_n=[\frac{1}{n},1]$. Each $F_n$ is closed.
+    \[\bigcup_{n=1}^{\infty}F_n=(0,1]\]
+    So, $(0,1]$ is $F_\sigma$.
+    \newline
+\end{parts}
+
+\end{document}
